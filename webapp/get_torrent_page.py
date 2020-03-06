@@ -2,6 +2,20 @@ import requests
 from bs4 import BeautifulSoup
 
 
+def check_login_rutracker():
+    username = 'username'
+    password = 'password'
+    url = 'https://rutracker.appspot.com/forum/login.php'
+    sess = requests.Session()
+    sess.verify = False
+    resp = sess.post(url, data={'username': username, 'password': password})
+    resp.raise_for_status()
+    resp = sess.get('https://rutracker.appspot.com/forum/viewtopic.php?sid=LE5slP2X&t=5855338')
+    resp.raise_for_status()
+    print(resp.text)
+    return resp.text
+
+
 def get_html(url):
     try:
         result = requests.get(url)
@@ -14,6 +28,7 @@ def get_html(url):
 
 def get_torrent_page(html):
     html = get_html(html)
+    html = check_login_rutracker()
     if html:
         soup = BeautifulSoup(html, 'html.parser')
         torrent_news = soup.find('table', id="latest-news-table").findAll('div')
@@ -25,9 +40,9 @@ def get_torrent_page(html):
                 "title": title,
                 "url": url,
             })
-        return(res_news)
+        return(news)
     return False
 
 
 if __name__ == "__main__":
-    print(get_torrent_page("https://rutracker.appspot.com/forum/index.php"))
+    check_login_rutracker()
