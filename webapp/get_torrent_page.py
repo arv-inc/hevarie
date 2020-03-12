@@ -2,18 +2,16 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def check_login_rutracker():
-    username = 'username'
-    password = 'password'
-    url = 'https://rutracker.appspot.com/forum/login.php'
-    sess = requests.Session()
-    sess.verify = False
-    resp = sess.post(url, data={'username': username, 'password': password})
-    resp.raise_for_status()
-    resp = sess.get('https://rutracker.appspot.com/forum/viewtopic.php?sid=LE5slP2X&t=5855338')
-    resp.raise_for_status()
-    print(resp.text)
-    return resp.text
+def get_rutracker_page(html_url, login_page_url, username, password):
+    try:
+        sess = requests.Session()
+        sess.verify = False
+        resp = sess.post(login_page_url, data={'login_username': username, 'login_password': password, "login": "login"})
+        resp = sess.get(html_url)
+        resp.raise_for_status()
+        return resp.text
+    except(requests.RequestException, ValueError):
+        return(False, "Сетевая ошибка")
 
 
 def get_html(url):
@@ -26,23 +24,29 @@ def get_html(url):
         return False
 
 
-def get_torrent_page(html):
-    html = get_html(html)
-    html = check_login_rutracker()
+def parse_torrent_page(html):
+    # html = get_rutracker_page(html_url, login_page_url, username, password)
     if html:
         soup = BeautifulSoup(html, 'html.parser')
-        torrent_news = soup.find('table', id="latest-news-table").findAll('div')
-        res_news = []
-        for news in torrent_news:
-            title = news.find('a').text
-            url = news.find('a')['href']
-            res_news.append({
-                "title": title,
-                "url": url,
-            })
-        return(news)
+        try:
+            torrent_added = soup.find('a', class_='p-link small').text
+            torrent_since = soup.find('span', class_='posted_since hide-for-print').text
+            torrent_description = soup.find('div', class_="post_body")
+            created_by = f'Производитель{torrent_description.find(string="Производитель").next}'
+            creater_url = f'Сайт производителя: {torrent_description.find("a", class_="postLink")["href"]}'
+            creater_name = f'Автор{torrent_description.find(string="Автор").next}'
+            torrent_short_description = f'Описание{torrent_description.find(string="Описание").next}'  # Не получилось взять описание с нового абзаца
+            torrent_title = torrent_description.find('span').text
+        except (TypeError, AttributeError):
+            return (None, "Описание не найдено")
+
+        torrent_description_list = {'torrent_added': torrent_added,
+                                    'torrent_since': torrent_since,
+                                    'torrent_title': torrent_title,
+                                    'created_by': created_by,
+                                    'creater_url': creater_url,
+                                    'creater_name': creater_name,
+                                    'torrent_short_description': torrent_short_description
+                                    }
+        return(torrent_description_list)
     return False
-
-
-if __name__ == "__main__":
-    check_login_rutracker()

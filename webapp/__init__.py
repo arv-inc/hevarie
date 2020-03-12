@@ -5,7 +5,7 @@
 # 5) по умолчанию главная страница должна выводить эти спарсенные данные (будем потом заменять, главное понять как это работает)
 from flask import Flask, render_template
 
-from webapp.get_torrent_page import get_html
+from webapp.get_torrent_page import get_rutracker_page, parse_torrent_page
 
 
 def create_app():
@@ -14,12 +14,15 @@ def create_app():
 
     @app.route('/')
     def index():
+        torrent_url = "https://rutracker.appspot.com/forum/viewtopic.php?sid=LE5slP2X&t=5855338"
         page_title = "Hevarie - parser"
-        torrent_url = app.config["DEFAULT_TORRENT_URL"]
-        torrent_page = get_html(torrent_url)
+        rutracker_login_url = app.config["RUTRACKER_LOGIN_URL"]
+        rutracker_login = app.config["RUTRACKER_LOGIN"]
+        rutracker_password = app.config["RUTRACKER_PASSWORD"]
+        rutracker_page = parse_torrent_page(get_rutracker_page(torrent_url, rutracker_login_url, rutracker_login, rutracker_password))
         return render_template(
             'index.html', page_title=page_title,
-            torrent_page=torrent_page
+            rutracker_page=rutracker_page
             )
 
     return app

@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="Windows-1251">
+<meta name="description" content="[Udemy] Полный Курс Python 3: от Новичка до Мастера (Питон, Пайтон) [2020, RUS] &raquo; Программирование (видеоуроки) :: RuTracker.org">
+<meta name="robots" content="nofollow">
+
+<title>[Udemy] Полный Курс Python 3: от Новичка до Мастера (Питон, Пайтон) [2020, RUS] :: RuTracker.org</title>
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="search" type="application/opensearchdescription+xml" title="Поиск на RuTracker.org" href="https://static.t-ru.org/opensearch.xml">
+
+<script>
+window.BB = {
+	cur_domain: location.hostname.replace(/.*?(([a-z0-9-]+\.){1,2}[a-z0-9-]+)$/, '$1'),
+	form_token: 'fd9d68545dd0ec5853cb84b43c2d622e',
+	opt_js: {"only_new":0,"h_flag":0,"h_av":0,"h_rnk_i":0,"h_post_i":0,"h_smile":0,"h_sig":0,"sp_op":0,"tr_tm":0,"h_cat":"","h_tsp":0,"h_ta":0},
+
+	IS_GUEST: !!'',
+	IMG_URL: 'https://static.t-ru.org/templates/v1/images',
+	SMILES_URL: 'https://static.t-ru.org/smiles',
+	FORUM_ID: '1565',
+		COOKIE_MARK: 'bb_mark_read',
+};
+BB.cookie_defaults = {
+	domain: '.' + BB.cur_domain,
+	path: "/forum/",
+};
+</script>
+<link href="https://static.t-ru.org/templates/v1/min/3296a091d6d912fe0154855d8af567c3.all.min.css" rel="stylesheet">
+<script src="https://static.t-ru.org/templates/v1/min/76fc3172cde6ea4e0d1a29e7d7f5433d.lib.min.js"></script>
+<script src="https://static.t-ru.org/templates/v1/min/39952d2ae11710108d10997710caa3df.bb.min.js"></script>
+
+
+
+<style>
+.invisible-el {
+	/* @include element-invisible(); */
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+}
+.hidden, .menu-sub, #ajax-loading, #ajax-error, var.ajax-params, #modal-blocker, .q-post {
+	display: none;
+}
+/**/
+/* temp */
+/* temp end */
+</style>
+
+<noscript>
+	<style>
+	.sp-body {
+		display: block; /* for bots */
+	}
+	</style>
+</noscript>
+
+</head>
+
+<body class="" style="">
+
+<div id="invisible-heap" class="invisible-el"></div>
+<div id="preload" class="invisible-el"></div>
+
+<div id="misc-hidden-elements" style="display: none;">
+	<form id="cse-search-box" action="search_cse.php?sid=LseabFcV" accept-charset="utf-8">
+		<input id="cse-text-match" type="text" name="q" size="60" value="">
+		<input type="submit" value="Поиск в Google">
+	</form>
+</div>
+
+
+
+
+
+<div id="body_container">
+
+		<script>
+	if (top != self && !self.location.hostname.match(BB.allowed_translator_hosts)) {
+		$(function () {
+			$('body').html('<h1 style="text-align: center;"><br><br>Похоже, вас пытаются обмануть<br>frame\'s hostname: ' + self.location.hostname + '</h1>');
+			throw new Error('in frame');
+		});
+	}
+		</script>
+
+	<div id="page_container">
+
+		<div id="page_header" class="hide-for-print">
+
+			<div id="main-nav" class="site-nav clearfix">
+				<ul class="inlined middot-separated floatL">
+					<li>
+						<a href="index.php"><b>Главная</b></a>
+					</li>
+					<li>
+													<span class="menu-split">
+								<a href="tracker.php?sid=LseabFcV" rel="nofollow"><b>Трекер</b></a>
+								<a href="#tr-menu" class="menu-root">
+									<img src="https://static.t-ru.org/templates/v1/images/menu_arrow_1.svg" alt="v">
+								</a>
+							</span>
+											</li>
+					<li>
+						<a href="search.php?sid=LseabFcV" rel="nofollow"><b>Поиск</b></a>
+					</li>
+					<li>
+						<a href="viewtopic.php?sid=LseabFcV&amp;t=1045"><b>Правила</b></a>
+					</li>
+					<li>
+						<a href="http://rutracker.wiki/" target="_blank"><b>FAQ</b></a>
+					</li>
+					<li>
+						<a href="groupcp.php?sid=LseabFcV" rel="nofollow"><b>Группы</b></a>
+					</li>
+									</ul>
+											</div>
+			<!--/main-nav-->
+
+						<div class="menu-sub" id="tr-menu">
+				<div class="menu-a bold nowrap">
+										<a class="med" href="tracker.php?sid=LseabFcV&amp;f=1556">Компьютерные видеоуроки и обучающие интерактивные DVD</a>
+										<a class="med" href="tracker.php?sid=LseabFcV&amp;f=1565">Программирование (видеоуроки)</a>
+				</div>
+			</div>
+			
+			<div id="logo">
+				<table style="height: 112px;">
+				<tr>
+					<td id="logo-td" style="padding: 3px 7px 3px 15px;">
+						<a href="index.php" class="site-logo-link">
+								<img class="site-logo"
+		src="https://rutrk.org/logo/logo-3.svg"
+		style=""
+		alt="logo">
+							</a>
+					</td>
+					<td class="tCenter w100" style="padding: 6px 10px 0 3px;">
+						<style>
+/* https://stackoverflow.com/a/23083463 */
+#bn-top-block {
+	display: none;
+	width: 1px;
+	/* min-width: JS */
+	margin: 0 auto;
+	overflow: hidden;
+}
+</style>
+<script>
+$(function () {
+	var $block = $('#bn-top-block');
+	var logoWidth = Math.max($('#logo-td').width(), 250);
+	var frameWidth = Math.min($(window).width() - logoWidth - 50, $block.data('max_width'));
+	$block.children('img').css({
+		'max-width': frameWidth + 'px',
+	});
+	$block.css({
+		'min-width': frameWidth + 'px',
+		display: 'inline-block',
+	});
+});
+</script>
+
+	<div style="padding: 6px;">
+		<iframe id="bn-top-block" data-max_width="728" src="https://rutracker.appspot.com/iframe/sape-appspot-728x90-gen.html"
+			height="90" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>
+	</div>
+
+					</td>
+				</tr>
+				</table>
+			</div>
+			<!--/logo-->
+
+			<div class="topmenu">
+				<table class="w100">
+				<tr>
+										<td class="w50">
+						<span class="top-menu-username-wrap">
+							<img class="log-out-icon" src="https://static.t-ru.org/templates/v1/images/logout_1.png"
+								onclick="return post2url('login.php', {logout: 1});" alt="" title="Выход"
+							>
+							<a id="logged-in-username" class="truncated-text" href="https://rutracker.appspot.com/forum/profile.php?mode=viewprofile&amp;u=44978714">hevarie</a>
+						</span>
+					</td>
+					
+					<td class="tCenter pad_2 nowrap">
+						<div>
+															<form id="quick-search" method="post" action="">
+									<input type="hidden" name="max" value="1">
+									<input id="search-text" type="text" name="nm" value="" tabindex="1" maxlength="100" accesskey="q">
+									<select id="search-menu" tabindex="2">
+										<option value="search-tr" data-action="tracker.php?sid=LseabFcV" selected> раздачи</option>
+																				<option value="search-tr" data-action="tracker.php?sid=LseabFcV" data-forum_id="1565"> |- по разделу</option>
+																				<option value="search-all" data-action="search.php?sid=LseabFcV"> все темы</option>
+																				<option value="search-all" data-action="search.php?sid=LseabFcV" data-forum_id="1565"> |- по разделу</option>
+																														<option value="wiki"> в wiki</option>
+										<option value="hash"> по info_hash</option>
+									</select>
+									<input id="search-submit" type="submit" value="поиск" tabindex="3">
+								</form>
+								<button id="cse-search-btn-top" data-query_input_id="search-text" style="display: none;"></button>
+													</div>
+					</td>
+
+										<td class="tRight w50 nowrap">
+						<div>
+							<ul class="inlined top-menus">
+								<li>
+									<span class="menu-split">
+										<a href="privmsg.php?sid=LseabFcV&amp;folder=inbox"
+											class="">
+											ЛС &#x2709;																																												</a>
+										<a href="#pms-menu" class="menu-root" data-hide_el_id="bn-top-right">
+											<img src="https://static.t-ru.org/templates/v1/images/menu_arrow_1.svg" alt="v">
+										</a>
+									</span>
+								</li>
+								<li>
+									<span class="menu-split">
+										<a href="https://rutracker.appspot.com/forum/profile.php?mode=viewprofile&amp;u=44978714">Профиль</a>
+										<a href="#profile-menu" class="menu-root" data-hide_el_id="bn-top-right">
+											<img src="https://static.t-ru.org/templates/v1/images/menu_arrow_1.svg" alt="v">
+										</a>
+									</span>
+								</li>
+								<li>
+									<span class="menu-split">
+										<a href="search.php?sid=LseabFcV&amp;uid=44978714">Мои сообщения</a>
+										<a href="#my-posts-menu" class="menu-root" data-hide_el_id="bn-top-right">
+											<img src="https://static.t-ru.org/templates/v1/images/menu_arrow_1.svg" alt="v">
+										</a>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</td>
+					
+				</tr>
+				</table>
+			</div><!--/topmenu-->
+
+						<div id="pms-menu" class="menu-sub">
+				<div class="menu-a bold nowrap">
+					<a class="med" href="privmsg.php?sid=LseabFcV&amp;folder=inbox">Входящие</a>
+					<a class="med" href="privmsg.php?sid=LseabFcV&amp;folder=outbox">Исходящие</a>
+					<a class="med" href="privmsg.php?sid=LseabFcV&amp;folder=sentbox">Отправленные</a>
+					<a class="med" href="privmsg.php?sid=LseabFcV&amp;folder=savebox">Сохранённые</a>
+				</div>
+			</div>
+			<div id="profile-menu" class="menu-sub">
+				<div class="menu-a bold nowrap">
+					<a class="med" href="profile.php?sid=LseabFcV&amp;mode=editprofile">Настройки</a>
+					<a class="med" href="search.php?sid=LseabFcV&amp;future_dls">Будущие закачки</a>
+					<a class="med" href="bookmarks.php?sid=LseabFcV">Избранное</a>
+				</div>
+			</div>
+			<div id="my-posts-menu" class="menu-sub">
+				<div class="menu-a bold nowrap">
+					<a class="med" href="tracker.php?sid=LseabFcV&amp;rid=44978714">Мои раздачи</a>
+					<a class="med topics-started" href="search.php?sid=LseabFcV&amp;uid=44978714&amp;myt=1">Начатые темы</a>
+					<a class="med" href="posts.php?sid=LseabFcV&amp;page=replies_in_started_topics&u=44978714">Ответы в начатых темах</a>
+				</div>
+			</div>
+			
+		</div>
+		<!--/page_header-->
+
+		
+		<div id="page_content">
+			<table style="width: 100%; border: none;">
+			<tr>
+
+				
+				<td id="main_content">
+					<div id="main_content_wrap">
+
+						
+						
+						
+						
+						<!--/page_header.tpl-->
+
+<style>
+/**/
+/**/
+/**/
+/**/
+/**/
+</style>
+
+<script>
+$(function () {
+		BB.initMagnetLinks();
+	});
+</script>
+
+
+<script>
+(function () {
+	var loadedText = {};
+
+	ajax.view_post = function (post_id) {
+		if (loadedText[post_id] != null) {
+			$('#ptx-' + post_id).toggle();
+			return;
+		}
+		ajax.exec({
+			action: 'view_post',
+			post_id: post_id,
+			mode: 'text',
+		});
+	};
+	ajax.callback.view_post = function (data) {
+		loadedText[data.post_id] = true;
+		$('#p-' + data.post_id).prepend(
+			'<textarea id="ptx-' + data.post_id + '" style="width: 99%; height: 200px;">' + data['post_text'] + '</textarea>'
+		);
+	};
+})();
+</script>
+
+
+<table class="w100">
+<tr>
+	<td class="w100 vBottom pad_2">
+		<h1 class="maintitle">
+			<a id="topic-title" class="topic-title-5855338 highlight-cyrillic" href="https://rutracker.appspot.com/forum/viewtopic.php?t=5855338">[Udemy] Полный Курс Python 3: от Новичка до Мастера (Питон, Пайтон) [2020, RUS]</a>
+		</h1>
+		<div class="small hide-for-print" style="margin: 12px 4px 8px;">
+			<b> Страницы: &nbsp;1</b>
+		</div>
+				<div class="small hide-for-print" style="margin: 8px 4px;">
+			<ul class="inlined middot-separated">
+				<li>
+					<span id="forum-moderators" class="a-like">Модераторы</span>
+				</li>
+															</ul>
+		</div>
+		
+		<table class="w100">
+		<tr>
+			<td class="pad_2 hide-for-print">
+				<a href="posting.php?sid=LseabFcV&amp;mode=reply&amp;t=5855338"><img src="https://static.t-ru.org/templates/v1/images/reply.gif" alt="Ответить"></a>
+			</td>
+			<td class="nav w100 pad_2">
+				&nbsp;<a href="index.php">Главная</a>
+				<em>&raquo;</em>&nbsp;<a href="index.php?c=10">Обучающее видео</a>
+								<em>&raquo;</em>&nbsp;<a href="viewforum.php?sid=LseabFcV&amp;f=1556">Компьютерные видеоуроки и обучающие интерактивные DVD</a>
+								<em>&raquo;</em>&nbsp;<a href="viewforum.php?sid=LseabFcV&amp;f=1565">Программирование (видеоуроки)</a>
+			</td>
+		</tr>
+		</table>
+
+	</td>
+	<td class="pad_2 hide-for-print">
+			</td>
+</tr>
+</table>
+
+<table id="t-tor-stats" class="forumline dl_list hide-for-print">
+
+<colgroup>
+	<col class="row1">
+</colgroup>
+
+<tr>
+	<td class="catTitle">
+
+		
+				<div>Статистика раздачи</div>
+		
+		
+		
+	</td>
+</tr>
+
+<tr>
+	<td class="borderless bCenter pad_8">
+		Размер:&nbsp; <b>4.92&nbsp;GB</b>&nbsp; &nbsp;|&nbsp;
+		&nbsp;Зарегистрирован:&nbsp; <b>16 дней</b>&nbsp;
+		&nbsp;|&nbsp; &nbsp;.torrent скачан:&nbsp; <b>1,614 раз</b>
+	</td>
+</tr>
+
+<tr>
+	<td class="row5 pad_2 tCenter">
+
+		
+					<div class="mrg_4 pad_4">
+								<span class="seed">Сиды:&nbsp; <b>56</b></span>
+																&nbsp;
+				<span class="leech">Личи:&nbsp; <b>15</b></span>
+							</div>
+					
+	</td>
+</tr>
+
+<tr>
+	<td class="row3 pad_4">
+		<script>
+		$(function () {
+			ajax.future_dl = function (action) {
+				ajax.exec({
+					action: action,
+					topic_id: '5855338',
+				});
+			};
+			ajax.callback.add_future_dl = ajax.callback.del_future_dl = function (data) {
+				$('#future-dl-buttons-wrap').html(data.html);
+			};
+			$('#del_future_dl, #add_future_dl').one('click', function () {
+				var action = this.id;
+				ajax.future_dl(action);
+				$(this).removeClass('a-like');
+			});
+		});
+		</script>
+		<span id="future-dl-buttons-wrap">
+						<span id="add_future_dl" class="a-like med">Добавить в «Будущие закачки»</span>
+					</span>
+	</td>
+</tr>
+
+</table>
+
+
+<div class="t-top-buttons-wrap row3 med bold hide-for-print">
+
+	
+	<ul id="t-top-user-buttons" class="inlined middot-separated buttons-cell user-buttons">
+				<li>
+			<a class="med" href="bookmarks.php?sid=LseabFcV">Избранное</a>
+			<span class="normal">
+				<script>
+				$(function () {
+					$('.action-bookmark').on('click', function () {
+						post2url('bookmarks.php', {
+							action: this.dataset['action'],
+							topic_id: '5855338',
+							forum_id: '1565',
+							request_origin: 'from_topic_page',
+						});
+					});
+				});
+				</script>
+				[
+									<span class="action-bookmark a-like" data-action="bookmark_add">добавить</span>
+								]
+			</span>
+		</li>
+		<li>
+			<a class="med" href="search.php?sid=LseabFcV&amp;uid=44978714&amp;t=5855338&amp;dm=1" title="В этой теме">Мои сообщения</a>
+					</li>
+		<li>
+			<a class="med" href="search.php?sid=LseabFcV&amp;uid=44978714&amp;f=1565" title="Ваши сообщения в разделе">В разделе</a>
+		</li>
+		<li>
+			<a id="t-view-opt" class="menu-root" href="#topic-options">Опции показа</a>
+		</li>
+	</ul>
+
+</div>
+
+<div class="menu-sub" id="topic-options">
+	<table style="border-spacing: 1px;">
+	<tr>
+		<th class="pad_4">Опции показа</th>
+	</tr>
+	<tr>
+		<td class="pad_4">
+			<fieldset>
+				<div class="med" style="padding: 6px 2px;">
+					<ul>
+						<li class="a-like bold" onclick="BB.printTopic();">Версия для печати</li>
+					</ul>
+				</div>
+			</fieldset>
+			<div class="spacer_4"></div>
+			<fieldset id="show-only">
+				<legend>Не показывать</legend>
+				<div class="med pad_4">
+					<label>
+						<input type="checkbox"
+																		onclick="BB.set_opt_js('h_flag', this.checked ? 1 : 0);"
+						/>флаги
+					</label>
+					<label>
+						<input type="checkbox" 						onclick="BB.set_opt_js('h_av', this.checked ? 1 : 0);"
+						/>аватары
+					</label>
+					<label>
+						<input type="checkbox"
+																		onclick="BB.set_opt_js('h_rnk_i', this.checked ? 1 : 0);"
+						/>картинки званий
+					</label>
+					<label>
+						<input type="checkbox" 						onclick="BB.set_opt_js('h_post_i', this.checked ? 1 : 0);"
+						/>картинки в сообщениях
+					</label>
+					<label>
+						<input type="checkbox" 						onclick="BB.set_opt_js('h_smile', this.checked ? 1 : 0);"
+						/>смайлики
+					</label>
+					<label>
+						<input type="checkbox" 						onclick="BB.set_opt_js('h_sig', this.checked ? 1 : 0);"
+						/>подписи
+					</label>
+				</div>
+			</fieldset>
+			<div class="spacer_4"></div>
+			<fieldset id="spoiler-opt">
+				<legend>Показывать</legend>
+				<div class="med pad_4">
+					<label>
+						<input type="checkbox" 						onclick="BB.set_opt_js('sp_op', this.checked ? 1 : 0);"
+						/>спойлер открытым
+					</label>
+				</div>
+			</fieldset>
+		</td>
+	</tr>
+	<tr>
+		<td class="cat tCenter pad_4"><input type="button" value="Отправить" style="width: 100px;" onclick="window.location.reload();"></td>
+	</tr>
+	</table>
+</div><!--/topic-options-->
+
+<table class="topic" id="topic_main">
+<tbody class="hide-for-print">
+<tr>
+	<th colspan="2" class="thHead">
+		<div id="soc-container" data-share_url="https://rutracker.appspot.com/forum/viewtopic.php?t=5855338" data-share_title="[Udemy] Полный Курс Python 3: от Новичка до Мастера (Питон, Пайтон) [2020, RUS]">&nbsp;</div>
+	</th>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78931836" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78931836"></a>
+		
+		
+				<p class="nick nick-author">DepictWeb</p>
+		
+		
+				<p class="rank_img"><img src="https://static.t-ru.org/ranks/s_topseed_2.gif" alt="Top Seed 02* 80r"></p>		<p class="avatar"><img src="https://static.t-ru.org/avatars/3/7/18078107.jpg" alt=""></p>		<p class="joined"><em>Стаж:</em> 9 лет 7 месяцев</p>		<p class="posts"><em>Сообщений:</em> 277</p>				<p class="flag"><img src="https://static.t-ru.org/flags/137.gif" class="poster-flag" alt="flag" title="Польша"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">DepictWeb &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;t=5855338">23-Фев-20 16:35</a>
+				</span>
+												<span class="posted_since hide-for-print">(16 дней назад)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+								
+				
+								<li><span class="txtb" onclick="ajax.view_post('78931836');">[Код]</span></li>
+																											</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-1">
+												<div class="post_body" id="p-78931836" data-ext_link_data='{"p":78931836,"t":5855338,"f":1565,"u":18078107}'>
+				<span style="font-size: 24px; line-height: normal;">Полный Курс Python 3: от Новичка до Мастера (Питон, Пайтон)</span><span class="post-br"><br></span><var class="postImg postImgAligned img-right" title="https://b.radikal.ru/b34/2002/bf/3ffacb2e9f41.jpg">&#10;</var><span class="post-b">Год выпуска</span>: 2020<br>
+<span class="post-b">Производитель</span>: Udemy<br>
+<span class="post-b">Сайт производителя</span>: <a href="https://www.udemy.com/course/complete-python-bootcamp-russian/" class="postLink">https://www.udemy.com/course/complete-python-bootcamp-russian/</a><br>
+<span class="post-b">Автор</span>: Jose Portilla, Vlad Burmistrov<br>
+<span class="post-b">Продолжительность</span>: 14:22:06<br>
+<span class="post-b">Тип раздаваемого материала</span>: Видеоурок<br>
+<span class="post-b">Язык</span>: Русский<br>
+<span class="post-b">Описание</span>: Станьте Python-программистом и изучите один из навыков, наиболее востребованных работодателями в 2020 году!<span class="post-br"><br></span>Этот курс является переводом на русский язык англоязычного бестселлера, который прошли уже более 800 000 слушателей! С поддержкой на русском языке.<span class="post-br"><br></span>Это наиболее полный и в то же время простой курс по языку программирования Python на Udemy! Если Вы никогда раньше не программировали, или Вы уже знаете базовый синтаксис, или Вам нужны продвинутые темы Python - этот курс для Вас!<span class="post-br"><br></span><span class="post-b">Файлы примеров</span>: присутствуют<br>
+<span class="post-b">Формат видео</span>: MP4<br>
+<span class="post-b">Видео</span>: AVC/H.264, 1280x720, 16:9, 30fps, ~327-1811 Kbps<br>
+<span class="post-b">Аудио</span>: AAC, 2 ch, 127-128 Kbps
+<div class="sp-wrap">
+<div class="sp-head folded"><span>Скриншоты</span></div>
+<div class="sp-body"><a href="https://b.radikal.ru/b36/2002/ba/ddf4efe1d021.png" class="postLink"><var class="postImg" title="https://d.radikal.ru/d10/2002/fd/c8bcc7865133.png">&#10;</var></a> <a href="https://c.radikal.ru/c41/2002/24/0c9c6598bf15.png" class="postLink"><var class="postImg" title="https://c.radikal.ru/c05/2002/d4/7e712ecf30b8.png">&#10;</var></a> <a href="https://b.radikal.ru/b09/2002/46/6557f8b2d5fa.png" class="postLink"><var class="postImg" title="https://a.radikal.ru/a07/2002/7f/5901871fa086.png">&#10;</var></a> <a href="https://c.radikal.ru/c01/2002/44/81642e32cce5.png" class="postLink"><var class="postImg" title="https://c.radikal.ru/c27/2002/68/6f624c6f3f9d.png">&#10;</var></a></div>
+</div>			</div><!--/post_body-->
+
+			
+			<div class="clear" style="height: 8px;"></div>
+
+			
+			
+			<table class="attach bordered med">
+<tr class="row3 tCenter">
+	<td colspan="3" style="padding: 6px;">
+		<ul class="inlined middot-separated">
+			<li><a href="/go/1" class="med" target="_blank">Как качать и раздавать</a></li>
+			<li><a href="http://rutracker.wiki" class="med" target="_blank">FAQ-и, Правила, Инструкции</a></li>
+			<li><a href="viewtopic.php?sid=LseabFcV&amp;t=5403116" class="med" target="_blank">Если покраснели раздачи</a></li>
+		</ul>
+	</td>
+</tr>
+<tr class="row1">
+	<td style="width: 15%;">Зарегистрирован:</td>
+	<td style="width: 70%; padding: 5px;">
+		<ul class="inlined middot-separated">
+			<li>23-Фев-20 16:35</li>
+			<li>Скачан: 1,614 раз</li>
+					</ul>
+	</td>
+	<td rowspan="4" style="width: 15%; padding: 10px 6px;" class="tCenter">
+				<a href="dl.php?sid=LseabFcV&amp;t=5855338" class="dl-stub dl-link dl-topic" >
+			<img src="https://static.t-ru.org/templates/v1/images/attach_big.gif" alt="Скачать .torrent"><br>
+			Скачать .torrent
+		</a>
+				<p class="small">114&nbsp;KB</p>
+		<div style="padding-top: 6px;">
+			<input id="tor-filelist-btn" type="button" class="lite" style="width: 120px;" value="Список файлов">
+		</div>
+	</td>
+</tr>
+<tr class="row1">
+	<td>Тип:</td>
+	<td>
+				<span class="">обычная</span>
+					</td>
+</tr>
+<tr class="row1">
+	<td>Статус:</td>
+	<td style="">
+			<span id="tor-status-resp">
+				<span class="tor-icon tor-approved">&radic;</span> <a href="viewtopic.php?sid=LseabFcV&amp;t=211216#torstatus" class="med"><b>проверено</b></a>
+							</span>
+			</td>
+</tr>
+<tr class="row1">
+	<td>Размер:</td>
+	<td style="padding: 2px 5px 5px;">
+		<ul class="inlined middot-separated">
+			<li><span id="tor-size-humn" title="5285925555">4.92&nbsp;GB</span></li>
+			<li>
+								<a href="magnet:?xt=urn:btih:0BD8DD94ECCB8FCE950411213A7381FCC25DD895&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet" class="med magnet-link" data-topic_id="5855338"  title="0BD8DD94ECCB8FCE950411213A7381FCC25DD895">
+					<img src="https://static.t-ru.org/templates/v1/images/magnet_1.svg" alt="magnet">Скачать по magnet-ссылке
+				</a>
+							</li>
+		</ul>
+	</td>
+</tr>
+<tr class="row3 tCenter">
+	<td colspan="3" style="padding: 6px;">
+											<a class="ref-1" href="go2.php?sid=LseabFcV&amp;id=20&pl=6&var=8&txt=1" rel="nofollow" target="_blank">SEO-специалист - работа с текстами, оптимизацией ресурсов, SMM и SERM</a>
+						</td>
+</tr>
+</table>
+
+<script>
+$(function () {
+	var tor_filetree = new FileTree({
+		container_id: 'tor-filelist',
+		controls_id: 'tor-fl-controls',
+		load_from: 'viewtorrent.php',
+		post_data: { t: '5855338' },
+		cat_id: '10',
+	});
+
+	$('#tor-filelist-btn').on('click', function () {
+		if (tor_filetree.is_inited) {
+			$('#tor-fl-wrap').toggle();
+		}
+		else {
+			$('#tor-fl-wrap').show();
+			tor_filetree.init();
+		}
+	});
+		//setTimeout(function () { tor_filetree.compare_with_other_tor('450647'); }, 1000);
+});
+</script>
+
+<!--<div id="tor-fl-DBG" style="margin: 12px auto 0; width: 95%; background: #FFF; white-space: pre; font: 15px Consolas; max-height: 400px; overflow: auto;"></div>-->
+
+
+<div id="tor-fl-wrap">
+	<div id="tor-fl-controls" class="med clearfix">
+		<ul class="inlined bullet-separated a-like-items floatL">
+			<li data-action="collapse" title="Свернуть некорневые директории">Свернуть поддиректории</li>
+			<li data-action="expand">Развернуть</li>
+			<li data-action="toggle">Переключить</li>
+		</ul>
+		<ul class="inlined bullet-separated a-like-items floatR">
+						<li data-action="toggle_win_size">Увел./умен. окно</li>
+		</ul>
+	</div>
+	<div id="cmp-results" style="display: none;"></div>
+	<div id="tor-filelist" class="med ftree-windowed"><span class="loading-1">загружается...</span></div>
+</div>
+
+<script>
+BB.thx_btn_clicked = false;
+
+ajax.thx = function (mode) {
+	ajax.exec({
+		action: 'thx',
+		mode: mode,
+		topic_id: '5855338',
+		t_hash: '240d0f0283bc59a5009a0fb6ef7fb869',
+	});
+};
+ajax.callback.thx = function (data) {
+	if (data.mode == 'add') {
+		$('#thx-btn').hide().after('<h2 style="color: green;">Спасибо за благодарность!</h2>');
+		BB.thx_btn_clicked = true;
+	}
+	$('#thx-list').html(data.html);
+	$('#thx-list b').after(' ');
+	open_thx_list();
+	$('#thx-list b').each(function () {
+		var uid = $(this).find('u').text();
+		if (uid > 0) {
+			$(this).wrap('<a href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=' + uid + '"></a>');
+		}
+	});
+};
+$(function () {
+	BB.initSpoilers($('#thx-block'));
+	window.$thx_head = $('#thx-block').find('.sp-head');
+	close_thx_list();
+		$('#thx-btn').one('click', function () {
+		$(this).prop({ disabled: true });
+		ajax.thx('add');
+	});
+		$thx_head.one('click', function () {
+		if (!BB.thx_btn_clicked) {
+			ajax.thx('get');
+		}
+	});
+});
+
+function thx_is_visible() {
+	return $('#thx-list').is(':visible');
+}
+
+function open_thx_list() {
+	if (!thx_is_visible()) { $thx_head.click(); }
+}
+
+function close_thx_list() {
+	if (thx_is_visible()) { $thx_head.click(); }
+}
+</script>
+
+<style>
+#thx-list a[href$='44978714'] b {
+	color: #00f;
+}
+</style>
+<div id="thx-block" class="hide-for-print">
+		<div id="thx-btn-div">
+		<input id="thx-btn" type="button" class="bold" style="width: 200px;" value='Сказать "Спасибо"'>
+	</div>
+		<div class="sp-wrap">
+		<div class="sp-head folded sp-no-auto-open"><span>Последние поблагодарившие</span></div>
+		<div id="thx-list" class="sp-body"></div>
+	</div>
+</div>
+
+<div class="spacer_12"></div>
+
+			
+			
+			
+						<div class="signature hide-for-print">
+				<div class="sig-body"><var class="postImg" title="http://static.t-ru.org/ranks/s_toploader_3.gif">&#10;</var> <var class="postImg" title="http://static.t-ru.org/ranks/s_topbonus_1.gif">&#10;</var></div>
+			</div>
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=18078107">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=18078107">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+<tbody class="hide-for-print">
+<tr class="row5">
+	<td colspan="2" class="td2">
+		<style>
+.bn-t-728x90 {
+	padding: 10px;
+	text-align: center;
+	display: none;
+}
+.bn-t-iframe-728x90 {
+	display: block;
+	margin: 10px auto;
+	width: 728px;
+	height: 90px;
+}
+.bn-t-65x100 {
+	display: block;
+	margin: 0 auto;
+	width: 65%;
+	height: 100px;
+}
+.bn-t-img {
+	padding: 10px;
+	text-align: center;
+	display: none;
+}
+</style>
+<script>
+$(function () {
+	var minFrameWidth = Math.min($(window).width() - 50, 728);
+	$('#bn-topic-iframe').css({
+		'min-width': minFrameWidth + 'px',
+	});
+	var maxImgWidth = $(window).width() - 50;
+	$('#bn-topic-block img').css({
+		'max-width': maxImgWidth + 'px',
+		height: 'auto',
+	});
+	$('#bn-topic-block').show();
+});
+</script>
+	<div id="bn-topic-block" class="bn-t-728x90"><a href="viewtopic.php?sid=LseabFcV&amp;t=5842130&subid=t-bn-3-1_mr" target="_blank" rel="nofollow"><img src="https://cdn.admitad-connect.com/public/bs/2019/12/16/fd439d6077b5fa4c8b9a2eb64c765195.jpg" style="width: 728px; height: auto;" alt=""></a></div>
+
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78931842" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78931842"></a>
+		
+		
+				<p class="nick nick-author">DepictWeb</p>
+		
+		
+				<p class="rank_img"><img src="https://static.t-ru.org/ranks/s_topseed_2.gif" alt="Top Seed 02* 80r"></p>		<p class="avatar"><img src="https://static.t-ru.org/avatars/3/7/18078107.jpg" alt=""></p>		<p class="joined"><em>Стаж:</em> 9 лет 7 месяцев</p>		<p class="posts"><em>Сообщений:</em> 277</p>				<p class="flag"><img src="https://static.t-ru.org/flags/137.gif" class="poster-flag" alt="flag" title="Польша"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">DepictWeb &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78931842#78931842">23-Фев-20 16:36</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 1 мин.)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78931842">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-2">
+						<div class="post_body" id="p-78931842" data-ext_link_data='{"p":78931842,"t":5855338,"f":1565,"u":18078107}'>
+				Курс является переводом данного курса:<br>
+<a href="viewtopic.php?sid=LseabFcV&amp;t=5810109" class="postLink">https://rutracker.org/forum/viewtopic.php?t=5810109</a>			</div><!--/post_body-->
+
+			
+						<div class="signature hide-for-print">
+				<div class="sig-body"><var class="postImg" title="http://static.t-ru.org/ranks/s_toploader_3.gif">&#10;</var> <var class="postImg" title="http://static.t-ru.org/ranks/s_topbonus_1.gif">&#10;</var></div>
+			</div>
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=18078107">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=18078107">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78932394" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78932394"></a>
+		
+		
+				<p class="nick ">Gqqqd</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 2 месяца 6 дней</p>		<p class="posts"><em>Сообщений:</em> 49</p>		
+		
+		<br>	</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Gqqqd &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78932394#78932394">23-Фев-20 18:14</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 1 час 37 мин., ред. 23-Фев-20 20:08)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78932394">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-3">
+						<div class="post_body" id="p-78932394" data-ext_link_data='{"p":78932394,"t":5855338,"f":1565,"u":44729528}'>
+				Все хорошо ну вот это сухое зачитывание синтаксиса без применения это на нужных практических примерах научится может только вундеркинд ну или супер упорный зубрежник			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=44729528">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=44729528">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78932471" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78932471"></a>
+		
+		
+				<p class="nick nick-author">DepictWeb</p>
+		
+		
+				<p class="rank_img"><img src="https://static.t-ru.org/ranks/s_topseed_2.gif" alt="Top Seed 02* 80r"></p>		<p class="avatar"><img src="https://static.t-ru.org/avatars/3/7/18078107.jpg" alt=""></p>		<p class="joined"><em>Стаж:</em> 9 лет 7 месяцев</p>		<p class="posts"><em>Сообщений:</em> 277</p>				<p class="flag"><img src="https://static.t-ru.org/flags/137.gif" class="poster-flag" alt="flag" title="Польша"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">DepictWeb &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78932471#78932471">23-Фев-20 18:20</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 5 мин.)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78932471">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-4">
+						<div class="post_body" id="p-78932471" data-ext_link_data='{"p":78932471,"t":5855338,"f":1565,"u":18078107}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Gqqqd</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78932394</u>матерьялы были по python 2 и теперь они тут удалены</div>
+</div>
+Если судить по слайдам, то скорее всего так и есть. Но курс сам еще не смотрел.			</div><!--/post_body-->
+
+			
+						<div class="signature hide-for-print">
+				<div class="sig-body"><var class="postImg" title="http://static.t-ru.org/ranks/s_toploader_3.gif">&#10;</var> <var class="postImg" title="http://static.t-ru.org/ranks/s_topbonus_1.gif">&#10;</var></div>
+			</div>
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=18078107">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=18078107">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78932478" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78932478"></a>
+		
+		
+				<p class="nick ">Gqqqd</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 2 месяца 6 дней</p>		<p class="posts"><em>Сообщений:</em> 49</p>		
+		
+		<br>	</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Gqqqd &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78932478#78932478">23-Фев-20 18:21</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 1 мин., ред. 23-Фев-20 18:21)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78932478">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-5">
+						<div class="post_body" id="p-78932478" data-ext_link_data='{"p":78932478,"t":5855338,"f":1565,"u":44729528}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>DepictWeb</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78932471</u>
+<div class="q-wrap">
+<div class="q-head"><span><b>Gqqqd</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78932394</u>матерьялы были по python 2 и теперь они тут удалены</div>
+</div>
+Если судить по слайдам, то скорее всего так и есть. Но курс сам еще не смотрел.</div>
+</div>
+да да я уже проверил просто удалены файлы по python 2			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=44729528">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=44729528">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78932561" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78932561"></a>
+		
+		
+				<p class="nick ">bdgmil</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 10 лет 2 месяца</p>		<p class="posts"><em>Сообщений:</em> 13</p>				<p class="flag"><img src="https://static.t-ru.org/flags/157.gif" class="poster-flag" alt="flag" title="Испания"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">bdgmil &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78932561#78932561">23-Фев-20 18:35</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 13 мин.)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78932561">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-6">
+						<div class="post_body" id="p-78932561" data-ext_link_data='{"p":78932561,"t":5855338,"f":1565,"u":14638784}'>
+				Изя Кац переводил?			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=14638784">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=14638784">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78938994" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78938994"></a>
+		
+		
+				<p class="nick ">TravekKing</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 1 год 9 месяцев</p>		<p class="posts"><em>Сообщений:</em> 11</p>				<p class="flag"><img src="https://static.t-ru.org/flags/10.gif" class="poster-flag" alt="flag" title="Австралия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">TravekKing &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78938994#78938994">24-Фев-20 19:21</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 1 день)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78938994">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-7">
+						<div class="post_body" id="p-78938994" data-ext_link_data='{"p":78938994,"t":5855338,"f":1565,"u":43278412}'>
+				перевод на 10 часов короче оригинала, как так?			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=43278412">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=43278412">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78939110" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78939110"></a>
+		
+		
+				<p class="nick ">Unimozg</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 12 лет 9 месяцев</p>		<p class="posts"><em>Сообщений:</em> 4</p>		
+		
+		<br>	</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Unimozg &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78939110#78939110">24-Фев-20 19:36</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 15 мин.)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78939110">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-8">
+						<div class="post_body" id="p-78939110" data-ext_link_data='{"p":78939110,"t":5855338,"f":1565,"u":1024356}'>
+				Мля с каких пор стало модно картавить. Невозможно слушать, бесит блин.			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=1024356">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=1024356">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78944526" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78944526"></a>
+		
+		
+				<p class="nick ">Gqqqd</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 2 месяца 6 дней</p>		<p class="posts"><em>Сообщений:</em> 49</p>		
+		
+		<br>	</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Gqqqd &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78944526#78944526">25-Фев-20 19:30</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 23 часа)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78944526">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-9">
+						<div class="post_body" id="p-78944526" data-ext_link_data='{"p":78944526,"t":5855338,"f":1565,"u":44729528}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>TravekKing</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78938994</u>перевод на 10 часов короче оригинала, как так?</div>
+</div>
+убран весь курс по python2			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=44729528">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=44729528">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78964297" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78964297"></a>
+		
+		
+				<p class="nick ">DjEV</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 11 лет 9 месяцев</p>		<p class="posts"><em>Сообщений:</em> 46</p>				<p class="flag"><img src="https://static.t-ru.org/flags/143.gif" class="poster-flag" alt="flag" title="Россия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">DjEV &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78964297#78964297">29-Фев-20 05:19</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 3 дня)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78964297">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-10">
+						<div class="post_body" id="p-78964297" data-ext_link_data='{"p":78964297,"t":5855338,"f":1565,"u":3770233}'>
+				Тем кто учит 3 Пайтон со вторым нет резона заморачиваться.			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=3770233">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=3770233">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78983694" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78983694"></a>
+		
+		
+				<p class="nick ">Psalmir</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 11 лет 5 месяцев</p>		<p class="posts"><em>Сообщений:</em> 8</p>				<p class="flag"><img src="https://static.t-ru.org/flags/143.gif" class="poster-flag" alt="flag" title="Россия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Psalmir &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78983694#78983694">03-Мар-20 08:05</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 3 дня)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78983694">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-11">
+						<div class="post_body" id="p-78983694" data-ext_link_data='{"p":78983694,"t":5855338,"f":1565,"u":5169323}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Unimozg</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78939110</u>Мля с каких пор стало модно картавить. Невозможно слушать, бесит блин.</div>
+</div>
+На скорости 1.5 все отлично воспринимается			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=5169323">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=5169323">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78993146" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78993146"></a>
+		
+		
+				<p class="nick ">Red______</p>
+		
+		
+						<p class="avatar"><img src="https://static.t-ru.org/avatars/8/67/40692567.jpg" alt=""></p>		<p class="joined"><em>Стаж:</em> 4 года 3 месяца</p>		<p class="posts"><em>Сообщений:</em> 97</p>				<p class="flag"><img src="https://static.t-ru.org/flags/182.gif" class="poster-flag" alt="flag" title="СССР"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Red______ &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78993146#78993146">05-Мар-20 05:52</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 1 день 21 час, ред. 05-Мар-20 05:52)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78993146">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-12">
+						<div class="post_body" id="p-78993146" data-ext_link_data='{"p":78993146,"t":5855338,"f":1565,"u":40692567}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Unimozg</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78939110</u>Мля с каких пор стало модно картавить. Невозможно слушать, бесит блин.</div>
+</div>
+Ты отстал от жизни! Ну ничего. Скоро модно будет дарить детишкам игрушки всяких земноводных и носить одежду аля саламандра! <img class="smile" src="https://static.t-ru.org/smiles/icon_cool.gif" alt=""><span class="post-br"><br></span>А 2 Питон действительно уже архаизм! Сейчас весь научный мир(а меня только этот аксепт программирования занимает)<br>
+во всю переходит на Питон(именно 3 Питон стал запалом). Скоро Матлаб и стивенская Математика окажутся атавизмом вместе с Кленовый Листиком.<br>
+А потом и Ансис пойдёт туда же! <img class="smile" src="https://static.t-ru.org/smiles/icon_biggrin.gif" alt=""><span class="post-br"><br></span>Я даже не ожидал, что простой пингвиний метаязык превратиться в такого суперкита!<br>
+ТО что не смог пока сделать Пингвин выполняет его отпрыск! <img class="smile" src="https://static.t-ru.org/smiles/icon_cool.gif" alt=""><span class="post-br"><br></span>И, конечно, изучать Питон надо не по этому переводному курсу.<br>
+Или найти нормальный непереводной русский курс или английский.<br>
+Сейчас инет полон их. Взять хотя бы _ttps://courses.edx.org/<br>
+Там не только лекторы всё объяснят, но и задачки дадут и экзамены проведут.<br>
+И даже бумажку пришлют<br>
+"Без бумажки ты какашка..."<br>
+Правда за бумажку придёться бабло заплатить и... это самое главное...<br>
+полностью себя раскрыть - кто ты и откудова!
+<div class="q-wrap">
+<div class="q-head"><span><b>DjEV</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78964297</u>Тем кто учит 3 Пайтон со вторым нет резона заморачиваться.</div>
+</div>
+Не могу не среагировать.<br>
+Советую также называть: пилота пайлот, президента прэзыдэнт, лонжерон лужэру, пропеллер пропелля, сортир сортйи...а <span class="post-b">идиота</span> идьёт!			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=40692567">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=40692567">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78997036" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78997036"></a>
+		
+		
+				<p class="nick ">Daredee</p>
+		
+		
+						<p class="avatar"><img src="https://static.t-ru.org/avatars/0/78/364578.gif" alt=""></p>		<p class="joined"><em>Стаж:</em> 13 лет 3 месяца</p>		<p class="posts"><em>Сообщений:</em> 157</p>				<p class="flag"><img src="https://static.t-ru.org/flags/143.gif" class="poster-flag" alt="flag" title="Россия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Daredee &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78997036#78997036">05-Мар-20 18:27</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 12 часов)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78997036">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-13">
+						<div class="post_body" id="p-78997036" data-ext_link_data='{"p":78997036,"t":5855338,"f":1565,"u":364578}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q">Не могу не среагировать.</div>
+</div>
+а Java как называешь?			</div><!--/post_body-->
+
+			
+						<div class="signature hide-for-print">
+				<div class="sig-body">Качай лицензионное! Скажи НЕТ пиратке!</div>
+			</div>
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=364578">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=364578">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78999212" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78999212"></a>
+		
+		
+				<p class="nick ">daggerok</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 9 лет 6 месяцев</p>		<p class="posts"><em>Сообщений:</em> 26</p>				<p class="flag"><img src="https://static.t-ru.org/flags/180.gif" class="poster-flag" alt="flag" title="Украина"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">daggerok &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78999212#78999212">06-Мар-20 02:08</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 7 часов)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78999212">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-14">
+						<div class="post_body" id="p-78999212" data-ext_link_data='{"p":78999212,"t":5855338,"f":1565,"u":18490333}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Daredee</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78997036</u>
+<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q">Не могу не среагировать.</div>
+</div>
+а Java как называешь?</div>
+</div>
+python == пайтон, java == джава,<br>
+а не питон и ява...			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=18490333">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=18490333">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_78999420" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="78999420"></a>
+		
+		
+				<p class="nick ">Red______</p>
+		
+		
+						<p class="avatar"><img src="https://static.t-ru.org/avatars/8/67/40692567.jpg" alt=""></p>		<p class="joined"><em>Стаж:</em> 4 года 3 месяца</p>		<p class="posts"><em>Сообщений:</em> 97</p>				<p class="flag"><img src="https://static.t-ru.org/flags/182.gif" class="poster-flag" alt="flag" title="СССР"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Red______ &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=78999420#78999420">06-Мар-20 18:28</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 16 часов, ред. 06-Мар-20 18:28)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=78999420">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-15">
+						<div class="post_body" id="p-78999420" data-ext_link_data='{"p":78999420,"t":5855338,"f":1565,"u":40692567}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Daredee</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78997036</u>
+<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q">Не могу не среагировать.</div>
+</div>
+а Java как называешь?</div>
+</div>
+Вот это правильно. Как я называю Java?<br>
+Всё остальное - это правила <span class="post-b">русской</span> грамматики. Замечу русской, а не современной украинской. Там возможны и Пайтоны и Пайлоты <img class="smile" src="https://static.t-ru.org/smiles/icon_biggrin.gif" alt=""><br>
+А Java я лично называю Жаба <img class="smile" src="https://static.t-ru.org/smiles/icon_smile.gif" alt=""> и ещё Скрипучая Жаба<br>
+Точно не Джава! В русском языке НЕТ звука [дж]. Все эти джипы, джинсы и джемы и даже джуга - безграмотный новояз.<span class="post-br"><br></span>Язык(вторая сигнальная...) вообще очень важен для творчества. Скажи рендер или шейдер и... мозги, привыкшие к образности в ступоре.<br>
+А скажи визуализация или оттенить(оттушевать) и для талантливых мозгов всё предельно ясно.<span class="post-br"><br></span>Похоже и с Жоржем Булем - скажи булевый тип и...кроме булек и буль булек ничего. А скажи логический и всё понятно!<span class="post-br"><br></span>Также с Питоном. Произнеси Питон - Самая крупная змея(благородный удав Каа). Таков и этот метаязык - Питон, и его эмблема свернувшийся удав, готовый расправиться и<br>
+уничтожить бандерлогов. Как ловко использовал этот архетип путин <img class="smile" src="https://static.t-ru.org/smiles/icon_furious.gif" alt=""> <img class="smile" src="https://static.t-ru.org/smiles/icon_twisted.gif" alt=""> (Пуу)<span class="post-br"><br></span>Скажи Пайтон и... кроме какого-нибудь Паттона или советского академика Патона ничего в сознании не возникает.<br>
+Сварка дело супер интересное, но от логики программирования очень далёкая и даже её нарушающая.<br>
+И коли тут упоминали евреев, то приведу занятное высказывание Паттона:<br>
+"…Гаррисон и иже с ним настаивают на том, будто перемещённые лица — человеческие создания, что не является верным, и особенно относится к евреям, которые ниже животных…"<span class="post-br"><br></span>Врядли такие люди и их образы в сознании помогут в осознании парадигмы программирования.<span class="post-br"><br></span>Насчёт Питона вообще Цирк бывает!<br>
+Один весёлый фраер(браток по французски) называет Питон упорно Пайтон(аж уши режет), но в то же время,скажем, lower произносит как ловер,<br>
+а upper уже как аппер <img class="smile" src="https://static.t-ru.org/smiles/icon_surprised.gif" alt="">			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=40692567">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=40692567">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_79002672" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="79002672"></a>
+		
+		
+				<p class="nick ">wolfy-33</p>
+		
+		
+				<p class="rank_img"><img src="https://static.t-ru.org/ranks/compete_sport_prize_winner.gif" alt="Призер спортивного конкурса"></p>		<p class="avatar"><img src="https://static.t-ru.org/avatars/7/14/35738814.gif" alt=""></p>		<p class="joined"><em>Стаж:</em> 5 лет 9 месяцев</p>		<p class="posts"><em>Сообщений:</em> 1308</p>				<p class="flag"><img src="https://static.t-ru.org/flags/143.gif" class="poster-flag" alt="flag" title="Россия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">wolfy-33 &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=79002672#79002672">06-Мар-20 18:37</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 9 мин., ред. 06-Мар-20 18:37)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=79002672">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-16">
+						<div class="post_body" id="p-79002672" data-ext_link_data='{"p":79002672,"t":5855338,"f":1565,"u":35738814}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>DepictWeb</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78931842</u>Курс является переводом данного курса:<br>
+<a href="viewtopic.php?sid=LseabFcV&amp;t=5810109" class="postLink">https://rutracker.org/forum/viewtopic.php?t=5810109</a></div>
+</div>
+<div class="q-wrap">
+<div class="q-head"><span><b>Mitiu</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78373309</u>Продолжительность: 24:09:27</div>
+</div>
+<div class="q-wrap">
+<div class="q-head"><span><b>DepictWeb</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78931836</u>Продолжительность: 14:22:06</div>
+</div>
+Пол курса не переведено?
+<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78999420</u>А Java я лично называю Жаба</div>
+</div>
+Джаба (из звезднх войн)
+<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78999420</u>Скажи Пайтон и... кроме какого-нибудь Паттона или советского академика Патона ничего в сознании не возникает.</div>
+</div>
+Понти Пайтон (комик)			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=35738814">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=35738814">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_79003806" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="79003806"></a>
+		
+		
+				<p class="nick ">gridl</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 10 лет 6 месяцев</p>		<p class="posts"><em>Сообщений:</em> 209</p>				<p class="flag"><img src="https://static.t-ru.org/flags/16.gif" class="poster-flag" alt="flag" title="Барбадос"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">gridl &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=79003806#79003806">06-Мар-20 21:42</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 3 часа)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=79003806">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-17">
+						<div class="post_body" id="p-79003806" data-ext_link_data='{"p":79003806,"t":5855338,"f":1565,"u":12710377}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78999420</u>
+<div class="q-wrap">
+<div class="q-head"><span><b>Daredee</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78997036</u>
+<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q">Не могу не среагировать.</div>
+</div>
+а Java как называешь?</div>
+</div>
+Вот это правильно. Как я называю Java?<br>
+Всё остальное - это правила <span class="post-b">русской</span> грамматики. Замечу русской, а не современной украинской. Там возможны и Пайтоны и Пайлоты <img class="smile" src="https://static.t-ru.org/smiles/icon_biggrin.gif" alt=""><br>
+А Java я лично называю Жаба <img class="smile" src="https://static.t-ru.org/smiles/icon_smile.gif" alt=""> и ещё Скрипучая Жаба<br>
+Точно не Джава! В русском языке НЕТ звука [дж]. Все эти джипы, джинсы и джемы и даже джуга - безграмотный новояз.<span class="post-br"><br></span>Язык(вторая сигнальная...) вообще очень важен для творчества. Скажи рендер или шейдер и... мозги, привыкшие к образности в ступоре.<br>
+А скажи визуализация или оттенить(оттушевать) и для талантливых мозгов всё предельно ясно.<span class="post-br"><br></span>Похоже и с Жоржем Булем - скажи булевый тип и...кроме булек и буль булек ничего. А скажи логический и всё понятно!<span class="post-br"><br></span>Также с Питоном. Произнеси Питон - Самая крупная змея(благородный удав Каа). Таков и этот метаязык - Питон, и его эмблема свернувшийся удав, готовый расправиться и<br>
+уничтожить бандерлогов. Как ловко использовал этот архетип путин <img class="smile" src="https://static.t-ru.org/smiles/icon_furious.gif" alt=""> <img class="smile" src="https://static.t-ru.org/smiles/icon_twisted.gif" alt=""> (Пуу)<span class="post-br"><br></span>Скажи Пайтон и... кроме какого-нибудь Паттона или советского академика Патона ничего в сознании не возникает.<br>
+Сварка дело супер интересное, но от логики программирования очень далёкая и даже её нарушающая.<br>
+И коли тут упоминали евреев, то приведу занятное высказывание Паттона:<br>
+"…Гаррисон и иже с ним настаивают на том, будто перемещённые лица — человеческие создания, что не является верным, и особенно относится к евреям, которые ниже животных…"<span class="post-br"><br></span>Врядли такие люди и их образы в сознании помогут в осознании парадигмы программирования.<span class="post-br"><br></span>Насчёт Питона вообще Цирк бывает!<br>
+Один весёлый фраер(браток по французски) называет Питон упорно Пайтон(аж уши режет), но в то же время,скажем, lower произносит как ловер,<br>
+а upper уже как аппер <img class="smile" src="https://static.t-ru.org/smiles/icon_surprised.gif" alt=""></div>
+</div>
+<a href="https://meshok.net/item/150318838_%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE%D0%BF%D1%80%D0%B8%D0%B5%D0%BC%D0%BD%D0%B8%D0%BA_%D0%93J%D0%90%D0%9B%D0%90_404_%D0%A1%D0%A1%D0%A1%D0%A0" class="postLink">https://meshok.net/item/150318838_%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE%D0%BF%D1%80%D0%B...0%A1%D0%A1%D0%A0</a>			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=12710377">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=12710377">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_79005162" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="79005162"></a>
+		
+		
+				<p class="nick ">oops_zibrova<wbr></p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 5 дней</p>		<p class="posts"><em>Сообщений:</em> 2</p>				<p class="flag"><img src="https://static.t-ru.org/flags/143.gif" class="poster-flag" alt="flag" title="Россия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">oops_zibrova<wbr> &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=79005162#79005162">07-Мар-20 01:44</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 4 часа)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=79005162">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-18">
+						<div class="post_body" id="p-79005162" data-ext_link_data='{"p":79005162,"t":5855338,"f":1565,"u":44977366}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78999420</u>
+<div class="q-wrap">
+<div class="q-head"><span><b>Daredee</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78997036</u>
+<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q">Не могу не среагировать.</div>
+</div>
+а Java как называешь?</div>
+</div>
+Вот это правильно. Как я называю Java?<br>
+Всё остальное - это правила <span class="post-b">русской</span> грамматики. Замечу русской, а не современной украинской. Там возможны и Пайтоны и Пайлоты <img class="smile" src="https://static.t-ru.org/smiles/icon_biggrin.gif" alt=""><br>
+А Java я лично называю Жаба <img class="smile" src="https://static.t-ru.org/smiles/icon_smile.gif" alt=""> и ещё Скрипучая Жаба<br>
+Точно не Джава! В русском языке НЕТ звука [дж]. Все эти джипы, джинсы и джемы и даже джуга - безграмотный новояз.<span class="post-br"><br></span>Язык(вторая сигнальная...) вообще очень важен для творчества. Скажи рендер или шейдер и... мозги, привыкшие к образности в ступоре.<br>
+А скажи визуализация или оттенить(оттушевать) и для талантливых мозгов всё предельно ясно.<span class="post-br"><br></span>Похоже и с Жоржем Булем - скажи булевый тип и...кроме булек и буль булек ничего. А скажи логический и всё понятно!<span class="post-br"><br></span>Также с Питоном. Произнеси Питон - Самая крупная змея(благородный удав Каа). Таков и этот метаязык - Питон, и его эмблема свернувшийся удав, готовый расправиться и<br>
+уничтожить бандерлогов. Как ловко использовал этот архетип путин <img class="smile" src="https://static.t-ru.org/smiles/icon_furious.gif" alt=""> <img class="smile" src="https://static.t-ru.org/smiles/icon_twisted.gif" alt=""> (Пуу)<span class="post-br"><br></span>Скажи Пайтон и... кроме какого-нибудь Паттона или советского академика Патона ничего в сознании не возникает.<br>
+Сварка дело супер интересное, но от логики программирования очень далёкая и даже её нарушающая.<br>
+И коли тут упоминали евреев, то приведу занятное высказывание Паттона:<br>
+"…Гаррисон и иже с ним настаивают на том, будто перемещённые лица — человеческие создания, что не является верным, и особенно относится к евреям, которые ниже животных…"<span class="post-br"><br></span>Врядли такие люди и их образы в сознании помогут в осознании парадигмы программирования.<span class="post-br"><br></span>Насчёт Питона вообще Цирк бывает!<br>
+Один весёлый фраер(браток по французски) называет Питон упорно Пайтон(аж уши режет), но в то же время,скажем, lower произносит как ловер,<br>
+а upper уже как аппер <img class="smile" src="https://static.t-ru.org/smiles/icon_surprised.gif" alt=""></div>
+</div>
+Ваши речи мне как мед в уши) Сразу видно на сколько вы разносторонний человек)			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=44977366">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=44977366">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_79005317" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="79005317"></a>
+		
+		
+				<p class="nick ">Noso</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 12 лет 2 месяца</p>		<p class="posts"><em>Сообщений:</em> 154</p>		
+		
+		<br>	</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Noso &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=79005317#79005317">07-Мар-20 02:42</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 57 мин., ред. 07-Мар-20 02:42)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=79005317">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-19">
+						<div class="post_body" id="p-79005317" data-ext_link_data='{"p":79005317,"t":5855338,"f":1565,"u":2334444}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78999420</u>А Java я лично называю Жаба</div>
+</div>
+- Пятачок, у тебя есть дома ружье?<br>
+- Неси его скорей.			</div><!--/post_body-->
+
+			
+						<div class="signature hide-for-print">
+				<div class="sig-body">Предлагаю коллективно смотреть и разбирать курс <span class="post-b">[Reed Barger] MERN Stack - The Complete Guide [ENG, 2020]</span>. Обсуждение t.me/jsdev_ru</div>
+			</div>
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=2334444">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=2334444">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_79005735" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="79005735"></a>
+		
+		
+				<p class="nick ">Daredee</p>
+		
+		
+						<p class="avatar"><img src="https://static.t-ru.org/avatars/0/78/364578.gif" alt=""></p>		<p class="joined"><em>Стаж:</em> 13 лет 3 месяца</p>		<p class="posts"><em>Сообщений:</em> 157</p>				<p class="flag"><img src="https://static.t-ru.org/flags/143.gif" class="poster-flag" alt="flag" title="Россия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Daredee &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=79005735#79005735">07-Мар-20 07:00</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 4 часа)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=79005735">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-20">
+						<div class="post_body" id="p-79005735" data-ext_link_data='{"p":79005735,"t":5855338,"f":1565,"u":364578}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>wolfy-33</b> писал(а):</span></div>
+<div class="q">Монти Пайтон</div>
+</div>
+именно в честь них, кстати, язык и назван			</div><!--/post_body-->
+
+			
+						<div class="signature hide-for-print">
+				<div class="sig-body">Качай лицензионное! Скажи НЕТ пиратке!</div>
+			</div>
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=364578">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=364578">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_79013725" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="79013725"></a>
+		
+		
+				<p class="nick ">epiphian</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 9 лет</p>		<p class="posts"><em>Сообщений:</em> 6</p>		
+		
+		<br>	</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">epiphian &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=79013725#79013725">08-Мар-20 10:42</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 1 день 3 часа, ред. 08-Мар-20 10:42)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=79013725">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-21">
+						<div class="post_body" id="p-79013725" data-ext_link_data='{"p":79013725,"t":5855338,"f":1565,"u":21689139}'>
+				<div class="q-wrap">
+<div class="q-head"><span><b>Red______</b> писал(а):</span></div>
+<div class="q"><u class="q-post">78993146</u>Не могу не среагировать.<br>
+Советую также называть: пилота пайлот, президента прэзыдэнт, лонжерон лужэру, пропеллер пропелля, сортир сортйи...а <span class="post-b">идиота</span> идьёт!</div>
+</div>
+А если учесть, что язык был назван в честь Монти Пайтона?<span class="post-br"><br></span>Я вполне понимаю и разделяю ваши мысли по поводу улучшения восприятия при использовании качественного и адекватного перевода. Но тут несколько другая ситуация. Да и как вам поможет правильное произнесение названия змеи для восприятия языка программирования?			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=21689139">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=21689139">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_79014199" class="row2">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="79014199"></a>
+		
+		
+				<p class="nick ">Daredee</p>
+		
+		
+						<p class="avatar"><img src="https://static.t-ru.org/avatars/0/78/364578.gif" alt=""></p>		<p class="joined"><em>Стаж:</em> 13 лет 3 месяца</p>		<p class="posts"><em>Сообщений:</em> 157</p>				<p class="flag"><img src="https://static.t-ru.org/flags/143.gif" class="poster-flag" alt="flag" title="Россия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">Daredee &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=79014199#79014199">08-Мар-20 12:11</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 1 час 29 мин.)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=79014199">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-22">
+						<div class="post_body" id="p-79014199" data-ext_link_data='{"p":79014199,"t":5855338,"f":1565,"u":364578}'>
+				<span class="post-b">epiphian</span><br>
+очевидно, что любому талантливому программисту становится тепло на душе и в мозгу, когда его спрашивают, дописал ли он те <span class="post-b">оттушевания</span> (wat?) воды и лавы			</div><!--/post_body-->
+
+			
+						<div class="signature hide-for-print">
+				<div class="sig-body">Качай лицензионное! Скажи НЕТ пиратке!</div>
+			</div>
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=364578">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=364578">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+
+<tbody id="post_79022499" class="row1">
+<tr>
+	<td class="poster_info td1 hide-for-print">
+		<a id="79022499"></a>
+		
+		
+				<p class="nick ">DjEV</p>
+		
+		
+								<p class="joined"><em>Стаж:</em> 11 лет 9 месяцев</p>		<p class="posts"><em>Сообщений:</em> 46</p>				<p class="flag"><img src="https://static.t-ru.org/flags/143.gif" class="poster-flag" alt="flag" title="Россия"></p>
+		
+		
+			</td>
+	<td class="message td2" rowspan="2">
+
+		<div class="post_head">
+			<p class="post-time">
+				<span class="hl-scrolled-to-wrap">
+					<span class="show-for-print bold">DjEV &middot; </span>
+					<img src="https://static.t-ru.org/templates/v1/images/icon_minipost_new.gif" class="icon1 hide-for-print" alt="">
+					<a class="p-link small" href="viewtopic.php?sid=LseabFcV&amp;p=79022499#79022499">09-Мар-20 19:57</a>
+				</span>
+												<span class="posted_since hide-for-print">(спустя 1 день 7 часов, ред. 09-Мар-20 19:57)</span>
+							</p>
+
+			<ul class="inlined t-post-buttons hide-for-print" style="float: right; padding: 3px 2px 4px;">
+				
+												<li><a class="txtb" href="posting.php?sid=LseabFcV&amp;mode=quote&amp;p=79022499">[Цитировать]</a></li>
+																							</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="post_wrap" id="p-134957007-23">
+						<div class="post_body" id="p-79022499" data-ext_link_data='{"p":79022499,"t":5855338,"f":1565,"u":3770233}'>
+				Нет желания, расписывать по пунктам, такому радикально настроенному индивиду. Вы в своем красноречии пытается затмить Демосфена и логикой Аристотеля не размениваясь на отличное мнение форумчан обобщенно называя тех кто не согласен унтерменьш по интеллектуальному признаку. Теперь по самому вопросу - Гвидо ван Россум назвал свой язык программирования в честь известного в начале 197X телешоу Монти Пайтон . Монти Пайтон не имеет никакого отношения к змеям. Не пишите то что Вы мне написали <span class="post-b">никому</span>.<span class="post-b">Вам</span> здесь себя называющий <span class="post-b">Red</span> желаю обрести внутренний покой.<br>
+<var class="postImg" title="https://i111.fastpic.ru/big/2020/0309/fc/e5674bf90bd63adf59eb7bdf04d866fc.jpg">&#10;</var>			</div><!--/post_body-->
+
+			
+					</div><!--/post_wrap-->
+
+		
+	</td>
+</tr>
+<tr>
+	<td class="poster_btn td3 hide-for-print">
+
+				<div style="padding: 2px 6px 4px;" class="post_btn_2">
+			<a class="txtb" href="profile.php?sid=LseabFcV&amp;mode=viewprofile&amp;u=3770233">[Профиль]</a>&nbsp;
+			<a class="txtb" href="privmsg.php?sid=LseabFcV&amp;mode=post&amp;u=3770233">[ЛС]</a>&nbsp;
+					</div>
+		
+	</td>
+</tr>
+</tbody>
+
+
+
+</table><!--/topic_main-->
+
+
+
+
+<table class="topic hide-for-print">
+<tr>
+	<td class="catBottom med">
+		&nbsp;
+	</td>
+</tr>
+</table>
+
+<table class="w100 hide-for-print" style="padding-top: 2px;">
+<tr>
+	<td class="vTop">
+		<a href="posting.php?sid=LseabFcV&amp;mode=reply&amp;t=5855338"><img src="https://static.t-ru.org/templates/v1/images/reply.gif" alt="Ответить"></a>
+	</td>
+	<td class="nav w100" style="padding-left: 8px;">
+		<a href="index.php">Главная</a>
+		<em>&raquo;</em>&nbsp;<a href="index.php?c=10">Обучающее видео</a>
+		 <em>&raquo;</em>&nbsp;<a href="viewforum.php?sid=LseabFcV&amp;f=1556">Компьютерные видеоуроки и обучающие интерактивные DVD</a>		<em>&raquo;</em>&nbsp;<a href="viewforum.php?sid=LseabFcV&amp;f=1565">Программирование (видеоуроки)</a>
+	</td>
+</tr>
+</table>
+
+<div class="bottom_info hide-for-print">
+
+	<div class="tRight">
+		<span id="jumpbox-wrap"></span>
+	</div>
+
+	<table class="w100">
+	<tr>
+				<td class="tRight med vTop">
+					</td>
+	</tr>
+	</table>
+
+</div><!--/bottom_info-->
+
+
+
+				</div><!--/main_content_wrap-->
+			</td><!--/main_content-->
+
+		</tr>
+		</table>
+	</div><!--/page_content-->
+
+	<!--page_footer-->
+	<div id="page_footer" class="hide-for-print">
+
+				<script>
+$(function () {
+	var imgMaxWidth = $(window).width() - 50;
+	$('#bn-page-bottom-block img').css({
+		'max-width': imgMaxWidth + 'px',
+		height: 'auto',
+	});
+});
+</script>
+		
+		<div class="clear"></div>
+
+		<nav id="footer-info-links">
+			<div>
+				<a href="info.php?sid=LseabFcV&amp;show=user_agreement" rel="nofollow">Условия использования</a>
+				&middot;
+				<a href="info.php?sid=LseabFcV&amp;show=advert" rel="nofollow">Реклама на сайте</a>
+				&middot;
+				<a href="info.php?sid=LseabFcV&amp;show=copyright_holders" rel="nofollow">Для правообладателей</a>
+				&middot;
+				<a href="info.php?sid=LseabFcV&amp;show=press" rel="nofollow">Для прессы</a>
+				&middot;
+				<a href="viewtopic.php?sid=LseabFcV&amp;t=2234744">Для провайдеров</a>
+				<!--&middot;-->
+				<!--<a href="http://rutracker.news">Блог</a>-->
+				&middot;
+				<a href="http://rutracker.wiki">Торрентопедия</a>
+			</div>
+			<div>
+				<a href="/go/8" rel="nofollow">Кому задать вопрос</a>
+				&middot;
+				<a href="viewforum.php?sid=LseabFcV&amp;f=1538">Авторские раздачи</a>
+				&middot;
+				<a href="viewforum.php?sid=LseabFcV&amp;f=1289">Конкурсы</a>
+				&middot;
+				<a href="viewforum.php?sid=LseabFcV&amp;f=2332">Новости &quot;Хранителей&quot; и &quot;Антикваров&quot;</a>
+				&middot;
+				<a href="" onclick="return post2url('index.php', {rand_rel: 1});" rel="nofollow">Случайная раздача</a>
+			</div>
+		</nav>
+
+		
+		<div class="tCenter nowrap" style="margin: 18px 4px 4px 4px;">
+						<!--<a href="https://kwork.ru?ref=1488045" target="_blank"><img src="https://kwork.ru/images/partner/02.jpg" style="border: 1px solid #efefef;" alt=""></a>-->
+		</div>
+
+		<div class="footer-bottom-links">
+			<ul class="inlined middot-separated">
+				<li><a href="groupcp.php?sid=LseabFcV&amp;g=104792" rel="nofollow">Администрация</a></li>
+				<li><a href="groupcp.php?sid=LseabFcV&amp;g=104787" rel="nofollow">Модераторы</a></li>
+				<li><a href="groupcp.php?sid=LseabFcV&amp;g=104841" rel="nofollow">Техническая помощь</a></li>
+				<li><a href="viewtopic.php?sid=LseabFcV&amp;t=224697">IRC канал</a></li>
+			</ul>
+			<div class="wide">
+									<script>
+					(function (d, w, c) {
+						(w[c] = w[c] || []).push(function () {
+							try {
+																w.yaCounter55943773 = new window.Ya.Metrika({ id: 55943773, clickmap: false, trackLinks: true, accurateTrackBounce: true });
+															} catch(e) { }
+						});
+						var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://mc.yandex.ru/metrika/watch.js";
+						if (w.opera == "[object Opera]") {
+							d.addEventListener("DOMContentLoaded", f, false);
+						} else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+					</script>
+													<script>
+					$(function () {
+						var title = "";
+						var src = "https://counter.yadro.ru/hit?t44.1;r" + encodeURIComponent(document.referrer) +
+							((typeof (screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) +
+							";u" + encodeURIComponent(document.URL) + ";h" + encodeURIComponent(title.substring(0, 80)) + ";" + Math.random();
+						$('<img src="' + src + '" alt="">').on('load', function () {
+							$('#liveinternet').append(this);
+						});
+					});
+					</script>
+					<a id="liveinternet" href="https://www.liveinternet.ru/" target="_blank"></a>
+							</div>
+			<ul class="inlined middot-separated">
+															</ul>
+		</div>
+
+	</div><!--/page_footer-->
+</div><!--/page_container-->
+
+
+<div id="ajax-loading"><b>Loading...</b></div>
+<div id="ajax-error"><b>Error</b></div>
+<style>
+#bb-alert-box {
+	width: auto;
+	max-width: 800px;
+	line-height: 18px;
+	display: none;
+}
+#bb-alert-msg {
+	min-width: 400px;
+	max-height: 400px;
+	margin: 50px 20px;
+	padding: 10px;
+	overflow: auto;
+	text-align: center;
+}
+.bb-alert-err {
+	color: #7E0000;
+	background: #FFEEEE;
+	box-shadow: 0 0 20px #B85353;
+	font-weight: bold;
+}
+</style>
+<div id="bb-alert-box">
+	<div id="bb-alert-msg"></div>
+</div>
+<div id="modal-blocker"></div>
+
+<script>
+$(function () {
+	if (!BB.hasET() && BB.getUrlParam('view') !== 'print') {
+		BB.navbar.init();
+	}
+});
+</script>
+<div id="nav-panel" class="nav-hidden-arrow hide-for-print">
+	<div id="nav-up" class="nav-btn" title="Вверх">
+		<span class="nav-icon"></span>
+	</div>
+	<div id="nav-settings" class="nav-btn">
+		<span class="nav-icon" title="Настройки"></span>
+		<ul id="nav-opt-menu">
+			<li class="nav-event" data-event="click">Показывать по клику</li>
+			<li class="nav-event" data-event="mouseenter">Показывать по наведению</li>
+		</ul>
+	</div>
+	<div id="nav-down" class="nav-btn" title="Вниз">
+		<span class="nav-icon"></span>
+	</div>
+	<div class="nav-hidden-overlay"></div>
+</div>
+
+
+	</div><!--/body_container-->
+
+</body>
+</html>
