@@ -25,7 +25,6 @@ def get_html(url):
 
 
 def parse_torrent_page(html):
-    # html = get_rutracker_page(html_url, login_page_url, username, password)
     if html:
         soup = BeautifulSoup(html, 'html.parser')
         try:
@@ -38,7 +37,8 @@ def parse_torrent_page(html):
             torrent_short_description = f'Описание{torrent_description.find(string="Описание").next}'  # Не получилось взять описание с нового абзаца
             torrent_title = torrent_description.find('span').text
         except (TypeError, AttributeError):
-            return (None, "Описание не найдено")
+            print("Описание не найдено")
+            return None
 
         torrent_description_list = {'torrent_added': torrent_added,
                                     'torrent_since': torrent_since,

@@ -20,9 +20,13 @@ def create_app():
         rutracker_login = app.config["RUTRACKER_LOGIN"]
         rutracker_password = app.config["RUTRACKER_PASSWORD"]
         rutracker_page = parse_torrent_page(get_rutracker_page(torrent_url, rutracker_login_url, rutracker_login, rutracker_password))
-        return render_template(
-            'index.html', page_title=page_title,
-            rutracker_page=rutracker_page
-            )
+        if rutracker_page:
+            return render_template(
+                'index.html', page_title=page_title,
+                rutracker_page=rutracker_page
+                )
+        else:
+            pass
+            # обработка ошибки при rutracker_page == None
 
     return app
