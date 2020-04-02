@@ -15,13 +15,10 @@
       <div class="container">
         <div class="row">
           <div class="col">
-              <h2>{{ rutracker_page.torrent_title }}</h2>
-              <p> {{ rutracker_page.torrent_added }} </p>
-              <p>Добавлен: {{ rutracker_page.torrent_since}}</p>
-              <h4> {{ rutracker_page.created_by }} </h4>
-              <h4>{{ rutracker_page.creater_url }}</h4>
-              <h4>{{ rutracker_page.creater_name }}</h4>
-              <h4>{{ rutracker_page.torrent_short_description }}</h4>
+              <h2>группа:{{ search_result.torrent_group }}</h2>
+              <p>имя: {{ search_result.torrent_name }} </p>
+              <p>добавлен: {{ search_result.torrent_created}}</p>
+              <h2>размер {{ search_result.torrent_size }}, скачать: {{ search_result.torrent_link }}  </h2>
           </div>
         </div>
       </div> 

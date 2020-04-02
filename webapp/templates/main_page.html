@@ -12,19 +12,21 @@
   </head>
   <body>
     <h1>{{ page_title }}</h1>
-      <div class="container">
+    <div class="container">
         <div class="row">
           <div class="col">
-              <h2>{{ rutracker_page.torrent_title }}</h2>
-              <p> {{ rutracker_page.torrent_added }} </p>
-              <p>Добавлен: {{ rutracker_page.torrent_since}}</p>
-              <h4> {{ rutracker_page.created_by }} </h4>
-              <h4>{{ rutracker_page.creater_url }}</h4>
-              <h4>{{ rutracker_page.creater_name }}</h4>
-              <h4>{{ rutracker_page.torrent_short_description }}</h4>
+            <form action="{{ url_for('parsed_torrent_page') }}" method="GET">
+                 {{ form.hidden_tag() }}
+                <p> {{ form.submit() }} </p>
+            </form>
           </div>
         </div>
-      </div> 
+            <div class="col-2">
+                <form action="{{ url_for('search_rutracker_page') }}" method="GET">
+                    <input type="submit" value="Поиск">
+                </form>
+            </div>
+    </div>
 
              
     <!-- Optional JavaScript -->

@@ -1,11 +1,12 @@
-# 1) Создать Flask проект, добавить в виртуальное окружение BeautifulSoup4, Requests в виртуальное окружение
+# 1) Создать Flask проект, добавить в виртуальное окружение BeautifulSoup4
 # 2) Создать файл зависимостей используя pip freeze и перенаправление потока
 # 3) создать главную страницу, с кнопкой Вход
 # 4) Открыть любую страницу торрента (которая доступна) и попробовать спарсить оттуда необходимые данные (название, дату загрузки, какое-нибудь описание)
 # 5) по умолчанию главная страница должна выводить эти спарсенные данные (будем потом заменять, главное понять как это работает)
 from flask import Flask, render_template
 
-from webapp.get_torrent_page import get_rutracker_page, parse_torrent_page
+from webapp.get_torrent_page import get_rutracker_page, parse_torrent_page, parse_search_page, get_html
+from webapp.forms import RutrackerPage, RutrackerSearch
 
 
 def create_app():
@@ -14,8 +15,33 @@ def create_app():
 
     @app.route('/')
     def index():
-        torrent_url = "https://rutracker.appspot.com/forum/viewtopic.php?sid=LE5slP2X&t=5855338"
         page_title = "Hevarie - parser"
+        rutracker_form = RutrackerPage()
+        return render_template(
+            'main_page.html', page_title=page_title, form=rutracker_form
+        )
+
+    @app.route('/search_result')
+    def search_rutracker_page():
+        page_title = "Результат поиска на Rutracker"
+        rutracker_search_url = 'https://rutracker.appspot.com/forum/tracker.php?nm=python'
+        # search_url = search_url
+        rutracker_login_url = app.config["RUTRACKER_LOGIN_URL"]
+        rutracker_login = app.config["RUTRACKER_LOGIN"]
+        rutracker_password = app.config["RUTRACKER_PASSWORD"]
+        torrent_url = rutracker_search_url
+        search_result = parse_search_page(get_rutracker_page(torrent_url, rutracker_login_url, rutracker_login, rutracker_password))
+        if search_result:
+            return render_template(
+                'search_result.html', search_result=search_result, page_title=page_title
+            )
+        else:
+            return ("Page not found")
+
+    @app.route('/rutracker_page')
+    def parsed_torrent_page():
+        torrent_url = "https://rutracker.appspot.com/forum/viewtopic.php?sid=LE5slP2X&t=5855338"
+        page_title = "Rutracker Torrent"
         rutracker_login_url = app.config["RUTRACKER_LOGIN_URL"]
         rutracker_login = app.config["RUTRACKER_LOGIN"]
         rutracker_password = app.config["RUTRACKER_PASSWORD"]
@@ -26,7 +52,7 @@ def create_app():
                 rutracker_page=rutracker_page
                 )
         else:
-            pass
+            return("Rutracker page not found")
             # обработка ошибки при rutracker_page == None
 
     return app
