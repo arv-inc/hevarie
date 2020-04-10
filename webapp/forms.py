@@ -9,5 +9,5 @@ class RutrackerPage(FlaskForm):
 
 
 class RutrackerSearch(FlaskForm):
-    search_text = StringField('Текст для поиска', validators=[DataRequired()])
-    submit = SubmitField('Искать')
+    search_text = StringField('Текст для поиска', validators=[DataRequired()], render_kw={"class": "form-control"})
+    submit = SubmitField('Искать', render_kw={"class": "btn btn-primary"})

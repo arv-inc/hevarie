@@ -11,21 +11,29 @@
     <title>{{ page_title }}</title>
   </head>
   <body>
-    <h1>{{ page_title }}</h1>
     <div class="container">
-        <div class="row">
+      <h1>{{ page_title }}</h1>
+        <div class="row">       
           <div class="col">
-            <form action="{{ url_for('parsed_torrent_page') }}" method="GET">
-                 {{ form.hidden_tag() }}
-                <p> {{ form.submit() }} </p>
+            <form action="{{ url_for('parsed_torrent_page') }}" method="POST">
+              <div class="form-group">
+                 {{ rutracker_form.hidden_tag() }}
+                 {{ rutracker_form.submit() }} 
+            </div>
             </form>
           </div>
         </div>
-            <div class="col-2">
-                <form action="{{ url_for('search_rutracker_page') }}" method="GET">
-                    <input type="submit" value="Поиск">
+        <div class="row-1">
+            <div class="col-0">
+                <form action="{{ url_for('search_rutracker_page') }}" method="POST">
+                  <div class="form-group">
+                    {{ rutracker_search.hidden_tag() }}
+                    {{ rutracker_search.search_text  }}
+                    {{ rutracker_search.submit() }}
+                  </div>
                 </form>
             </div>
+        </div>
     </div>
 
              

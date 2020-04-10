@@ -19,7 +19,7 @@ def get_html(url):
          'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'
         }
     try:
-        result = requests.get(url, headers)
+        result = requests.get(url, headers) # Sessions -???
         result.raise_for_status()
         return result.text
     except(requests.RequestException, ValueError):
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     #             )
     #             )
 
-    print(parse_search_page( get_rutracker_page(
+    print(parse_search_page(get_rutracker_page(
                 'https://rutracker.appspot.com/forum/tracker.php?nm=python',
                 'https://rutracker.appspot.com/forum/login.php',
                 'hevarie',
