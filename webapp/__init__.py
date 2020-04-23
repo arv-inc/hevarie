@@ -7,14 +7,20 @@
 # 7) Поиск делать сначала в базе – затем на сайте
 
 from flask import Flask, render_template
-
-from webapp.get_torrent_page import get_rutracker_page, parse_torrent_page, parse_search_page
+from webapp.get_torrent_page import get_rutracker_page, parse_torrent_page, parse_three_result, get_rutracker_session
 from webapp.forms import RutrackerPage, RutrackerSearch
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
+    rutracker_login_url = app.config["RUTRACKER_LOGIN_URL"]
+    rutracker_login = app.config["RUTRACKER_LOGIN"]
+    rutracker_password = app.config["RUTRACKER_PASSWORD"]
+    try:
+        sess = get_rutracker_session(rutracker_login_url, rutracker_login, rutracker_password)
+    except(ValueError):
+        return("Ошибка сети")
 
     @app.route('/')
     def index():
@@ -22,38 +28,33 @@ def create_app():
         rutracker_form = RutrackerPage()
         rutracker_search = RutrackerSearch()
         return render_template(
-            'main_page.html', page_title=page_title, rutracker_form=rutracker_form, rutracker_search=rutracker_search
+            'main_page.html', page_title=page_title, rutracker_form=rutracker_form, rutracker_search=rutracker_search, sess=sess
         )
 
     @app.route('/search_result', methods=['POST', 'GET'])
     def search_rutracker_page():
         form = RutrackerSearch()
         page_title = "Результат поиска на Rutracker"
-        rutracker_login_url = app.config["RUTRACKER_LOGIN_URL"]
-        rutracker_login = app.config["RUTRACKER_LOGIN"]
-        rutracker_password = app.config["RUTRACKER_PASSWORD"]
+        rutracker_search_url = app.config["RUTRACKER_SEARCH_URL"]
         if form.search_text.data:
             search_text = form.search_text.data
-            rutracker_search_url = f'https://rutracker.appspot.com/forum/tracker.php?nm={search_text}'
-            torrent_url = rutracker_search_url
-            search_result = parse_search_page(get_rutracker_page(torrent_url, rutracker_login_url, rutracker_login, rutracker_password))
+            rutracker_search_url = f'{rutracker_search_url}{search_text}'
+            search_result = parse_three_result(get_rutracker_page(rutracker_search_url, sess))
         else:
             return ("На rutracker.org не найдено")
         if search_result:
+            print(search_result)
             return render_template(
-                'search_result.html', search_result=search_result, page_title=page_title, rutracker_search_url=rutracker_search_url
+                'three_result.html', search_result=search_result, page_title=page_title, rutracker_search_url=rutracker_search_url
             )
         else:
             return ("Page not found")
 
     @app.route('/rutracker_page', methods=['POST', 'GET'])
     def parsed_torrent_page():
-        torrent_url = "https://rutracker.appspot.com/forum/viewtopic.php?sid=LE5slP2X&t=5855338"
+        torrent_url = "https://rutracker.org/forum/viewtopic.php?sid=LE5slP2X&t=5855338"
         page_title = "Rutracker Torrent"
-        rutracker_login_url = app.config["RUTRACKER_LOGIN_URL"]
-        rutracker_login = app.config["RUTRACKER_LOGIN"]
-        rutracker_password = app.config["RUTRACKER_PASSWORD"]
-        rutracker_page = parse_torrent_page(get_rutracker_page(torrent_url, rutracker_login_url, rutracker_login, rutracker_password))
+        rutracker_page = parse_torrent_page(get_rutracker_page(torrent_url, sess))
         if rutracker_page:
             return render_template(
                 'index.html', page_title=page_title,
@@ -61,6 +62,4 @@ def create_app():
                 )
         else:
             return("Rutracker page not found")
-            # обработка ошибки при rutracker_page == None
-
     return app

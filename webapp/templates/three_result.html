@@ -11,31 +11,21 @@
     <title>{{ page_title }}</title>
   </head>
   <body>
-    <div class="container">
-      <h1>{{ page_title }}</h1>
-      <h2>{{ sess }}</h2>
-        <div class="row">       
+    <h1>{{ page_title }}</h1>
+      <div class="container">
+        <div class="row">
           <div class="col">
-            <form action="{{ url_for('parsed_torrent_page') }}" method="POST">
-              <div class="form-group">
-                 {{ rutracker_form.hidden_tag() }}
-                 {{ rutracker_form.submit() }} 
-            </div>
-            </form>
+              <h1>{{ rutracker_search_url }}</h1>
+                {% for torrent_dict in search_result %}
+                <p>========================================</p>
+                <p>имя: {{ torrent_dict.torrent_name }} </p>
+                <p>добавлен: {{ torrent_dict.torrent_created}}</p>
+                <p>размер: {{ torrent_dict.torrent_size }}</p>
+                <p>ссылка на скачивание: <a href>{{ torrent_dict.torrent_download_link }}</a></p>
+                {% endfor %}
           </div>
         </div>
-        <div class="row-1">
-            <div class="col-0">
-                <form action="{{ url_for('search_rutracker_page') }}" method="POST">
-                  <div class="form-group">
-                    {{ rutracker_search.hidden_tag() }}
-                    {{ rutracker_search.search_text  }}
-                    {{ rutracker_search.submit() }}
-                  </div>
-                </form>
-            </div>
-        </div>
-    </div>
+      </div> 
 
              
     <!-- Optional JavaScript -->

@@ -1,30 +1,63 @@
 import requests
 from bs4 import BeautifulSoup
+from webapp.config import headers
 
 
-def get_rutracker_page(html_url, login_page_url, username, password):
+def get_rutracker_session(login_page_url, username, password):
     try:
-        sess = requests.Session()
-        sess.verify = False
-        resp = sess.post(login_page_url, data={'login_username': username, 'login_password': password, "login": "login"})
+        session = requests.Session()
+        session.verify = False
+        session.post(login_page_url, data={'login_username': username, 'login_password': password, "login": "login"}, headers=headers)
+    except(ValueError):
+        return("Ошибка сети")
+    return(session)
+
+
+def get_rutracker_page(html_url, sess):
+    try:
         resp = sess.get(html_url)
         resp.raise_for_status()
         return resp.text
-    except(requests.RequestException, ValueError):
+    except(ValueError):
         return(False, "Сетевая ошибка")
 
 
 def get_html(url):
-    headers = {
-         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'
-        }
     try:
-        result = requests.get(url, headers) # Sessions -???
+        result = requests.get(url, headers)  # Sessions -???
         result.raise_for_status()
         return result.text
     except(requests.RequestException, ValueError):
         print("Сетевая ошибка")
         return False
+
+
+def get_proxy():
+    url = 'https://free-proxy-list.net/'
+    try:
+        proxy_page = get_html(url)
+    except(ValueError):
+        return("Сетевая ошибка")
+    soup = BeautifulSoup(proxy_page, 'html.parser')
+    try:
+        proxy_list = soup.find('tbody').findAll('tr')
+        for proxy in proxy_list:
+            proxy_ip = proxy.find('td').text
+            proxy_port = proxy.find('td').next.next.text
+            proxies = {
+                        'http': f'http://{proxy_ip}:{proxy_port}',
+                        'https': f'http://{proxy_ip}:{proxy_port}',
+                    }
+            try:
+                print(proxy_ip, proxy_port)
+                request = requests.post('https://rutracker.org/forum/login.php', proxies=proxies)
+                print(request.status_code())
+            except(ValueError):
+                print("сетевая ошибка")
+    except(TypeError, AttributeError):
+        print("Прокси не найдены")
+        return None
+    return proxy_ip
 
 
 def parse_search_page(html):
@@ -34,20 +67,19 @@ def parse_search_page(html):
             torrent_group = soup.find('a', class_='gen f ts-text').text
             torrent_name = soup.find('a', class_='med tLink ts-text hl-tags bold').text
             torrent_created = soup.find('td', class_='row4 small nowrap').text
-            # torrent_tag = soup.find('div', class_='t-tags')  # может отсутсtorrent_size = soup.find('a', class_='gr-button tr-dl dl-stub').text
             torrent_link = soup.find('a', class_='small tr-dl dl-stub')['href']
             torrent_size = soup.find('a', class_='small tr-dl dl-stub').text
         except (TypeError, AttributeError):
             print("По данному запросу ничего нет")
             return None
 
-        search_result_dict = {'torrent_group': torrent_group,
-                              'torrent_name': torrent_name,
-                              'torrent_created': torrent_created,
-                            #  'torrent_tag': torrent_tag
-                               'torrent_size': torrent_size,
-                               'torrent_link': torrent_link
-                             }
+        search_result_dict = {
+            'torrent_group': torrent_group,
+            'torrent_name': torrent_name,
+            'torrent_created': torrent_created,
+            'torrent_size': torrent_size,
+            'torrent_link': torrent_link
+                            }
         return search_result_dict
     return False
 
@@ -80,20 +112,37 @@ def parse_torrent_page(html):
     return False
 
 
-if __name__ == "__main__":
-    # print(get_rutracker_page(
-    #             'https://rutracker.appspot.com/forum/tracker.php?nm=python',
-    #             'https://rutracker.appspot.com/forum/login.php',
-    #             'hevarie',
-    #             '123456'
-    #             )
-    #             )
+def parse_three_result(html):
+    three_torrent_list = []
+    if html:
+        soup = BeautifulSoup(html, 'html.parser')
+        try:
+            torrent_group = soup.find('tbody').findAll('tr', class_="tCenter hl-tr")
+        except (TypeError, AttributeError):
+            print("По данному запросу ничего нет")
+            return None
+        for torrent in torrent_group[0:3]:
+            torrent_name = torrent.find('a', class_='med tLink ts-text hl-tags bold').text
+            torrent_created = torrent.find('td', class_='row4 small nowrap').text
+            torrent_size = torrent.find('a', class_='small tr-dl dl-stub').text
+            torrent_link = torrent.find('a', class_='small tr-dl dl-stub')['href']
+            three_torrent_dict = {
+                'torrent_name': torrent_name,
+                'torrent_created': torrent_created,
+                'torrent_size': torrent_size,
+                'torrent_download_link': f'https://rutracker.org/forum/{torrent_link}'
+            }
+            three_torrent_list.append(three_torrent_dict)
+        return three_torrent_list
+    return False
 
-    print(parse_search_page(get_rutracker_page(
-                'https://rutracker.appspot.com/forum/tracker.php?nm=python',
-                'https://rutracker.appspot.com/forum/login.php',
-                'hevarie',
-                '123456'
-                )
-                )
-                )
+
+if __name__ == "__main__":
+    # print(
+    #     parse_three_result(
+    #         get_rutracker_page(
+    #             'https://rutracker.org/forum/tracker.php?nm=Warhammer',
+    #             'https://rutracker.org/forum/login.php',
+    #             'hevarie',
+    #             '123456')))
+    print(get_rutracker_session())
