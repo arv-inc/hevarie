@@ -7,7 +7,8 @@
 # 7) Поиск делать сначала в базе – затем на сайте
 
 from flask import Flask, render_template
-from webapp.get_torrent_page import get_rutracker_page, parse_torrent_page, parse_three_result, get_rutracker_session
+from webapp.model import db, Torrent
+from webapp.get_rutracker_page import get_rutracker_page, parse_torrent_page, parse_search_result, get_rutracker_session
 from webapp.forms import RutrackerPage, RutrackerSearch
 
 
@@ -17,6 +18,7 @@ def create_app():
     rutracker_login_url = app.config["RUTRACKER_LOGIN_URL"]
     rutracker_login = app.config["RUTRACKER_LOGIN"]
     rutracker_password = app.config["RUTRACKER_PASSWORD"]
+    db.init_app(app)
     try:
         sess = get_rutracker_session(rutracker_login_url, rutracker_login, rutracker_password)
     except(ValueError):
@@ -39,7 +41,7 @@ def create_app():
         if form.search_text.data:
             search_text = form.search_text.data
             rutracker_search_url = f'{rutracker_search_url}{search_text}'
-            search_result = parse_three_result(get_rutracker_page(rutracker_search_url, sess))
+            search_result = parse_search_result(get_rutracker_page(rutracker_search_url, sess))
         else:
             return ("На rutracker.org не найдено")
         if search_result:

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from sqlalchemy.exc import IntegrityError, InvalidRequestError
 import requests
 from webapp.model import db, Torrent
 from bs4 import BeautifulSoup
@@ -33,34 +34,6 @@ def get_html(url):
     except(requests.RequestException, ValueError):
         print("Сетевая ошибка")
         return False
-
-
-def get_proxy():
-    url = 'https://free-proxy-list.net/'
-    try:
-        proxy_page = get_html(url)
-    except(ValueError):
-        return("Сетевая ошибка")
-    soup = BeautifulSoup(proxy_page, 'html.parser')
-    try:
-        proxy_list = soup.find('tbody').findAll('tr')
-        for proxy in proxy_list:
-            proxy_ip = proxy.find('td').text
-            proxy_port = proxy.find('td').next.next.text
-            proxies = {
-                        'http': f'http://{proxy_ip}:{proxy_port}',
-                        'https': f'http://{proxy_ip}:{proxy_port}',
-                    }
-            try:
-                print(proxy_ip, proxy_port)
-                request = requests.post('https://rutracker.org/forum/login.php', proxies=proxies)
-                print(request.status_code())
-            except(ValueError):
-                print("сетевая ошибка")
-    except(TypeError, AttributeError):
-        print("Прокси не найдены")
-        return None
-    return proxy_ip
 
 
 def parse_torrent_page(html):
@@ -123,11 +96,22 @@ def parse_search_result(html):
 
 
 def save_torrent(torrent_name, torrent_date, torrent_size, torrent_file_link):
-    new_torrent = Torrent(torrent_name=torrent_name, torrent_date=torrent_date, torrent_size=torrent_size, torrent_file_link=torrent_file_link)
-    db.session.add(new_torrent)
-    db.session.commit()
+    torrent_exist_count = Torrent.query.filter(Torrent.torrent_file_link == torrent_file_link).count()
+    if not torrent_exist_count:
+        new_torrent = Torrent(torrent_name=torrent_name, torrent_date=torrent_date, torrent_size=torrent_size, torrent_file_link=torrent_file_link)
+        try:
+            db.session.add(new_torrent)
+            db.session.commit()
+        except (IntegrityError, InvalidRequestError):
+            print(f'{torrent_name}: "Already saved"')
+            return("Already saved")
+
+
+def search_in_db(search_text):
+    torrent_exist_count = Torrent.query.filter(Torrent.torrent_name == search_text).count()
+    print(torrent_exist_count)
 
 
 if __name__ == "__main__":
-
-    print(get_rutracker_session())
+    search_in_db("Warhammer")
+    #print(get_rutracker_session())
