@@ -38,19 +38,20 @@ def create_app():
         form = RutrackerSearch()
         page_title = "Результат поиска на Rutracker"
         rutracker_search_url = app.config["RUTRACKER_SEARCH_URL"]
-        if form.search_text.data:
-            search_text = form.search_text.data
-            rutracker_search_url = f'{rutracker_search_url}{search_text}'
-            search_result = parse_search_result(get_rutracker_page(rutracker_search_url, sess))
+        search_text = form.search_text.data
+        rutracker_search_url = f'{rutracker_search_url}{search_text}'
+        search_result = Torrent.query.filter(Torrent.torrent_name.ilike(f'%{search_text}%')).all()
+        if not search_result:
+            parse_search_result(get_rutracker_page(rutracker_search_url, sess))
+            search_result = Torrent.query.filter(Torrent.torrent_name.ilike(f'%{search_text}%')).all()
         else:
-            return ("На rutracker.org не найдено")
+            pass
         if search_result:
-            print(search_result)
             return render_template(
-                'three_result.html', search_result=search_result, page_title=page_title, rutracker_search_url=rutracker_search_url
-            )
+                    'three_result.html', search_result=search_result, page_title=page_title, rutracker_search_url=rutracker_search_url
+                )
         else:
-            return ("Page not found")
+            return ("Не найдено")
 
     @app.route('/rutracker_page', methods=['POST', 'GET'])
     def parsed_torrent_page():

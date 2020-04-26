@@ -19,9 +19,9 @@
                 {% for torrent_dict in search_result %}
                 <p>========================================</p>
                 <p>имя: {{ torrent_dict.torrent_name }} </p>
-                <p>добавлен: {{ torrent_dict.torrent_created}}</p>
+                <p>добавлен: {{ torrent_dict.torrent_date.strftime('%d.%m.%Y %H:%M')}}</p>
                 <p>размер: {{ torrent_dict.torrent_size }}</p>
-                <p>ссылка на скачивание: <a href={{ torrent_dict.torrent_download_link }}>{{ torrent_dict.torrent_download_link }}</a></p>
+                <p>ссылка на скачивание: <a href={{ torrent_dict.torrent_file_link }}>{{ torrent_dict.torrent_file_link }}</a></p>
                 {% endfor %}
           </div>
         </div>

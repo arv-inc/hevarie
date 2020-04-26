@@ -1,10 +1,17 @@
 from datetime import datetime
+import locale
+import platform
 
 from sqlalchemy.exc import IntegrityError, InvalidRequestError
 import requests
 from webapp.model import db, Torrent
 from bs4 import BeautifulSoup
 from webapp.config import headers
+
+if platform.system() == "Windows":
+    locale.setlocale(locale.LC_ALL, "russian")
+else:
+    locale.setlocale(locale.LC_TIME, "ru_RU.UTF-8")
 
 
 def get_rutracker_session(login_page_url, username, password):
@@ -76,20 +83,12 @@ def parse_search_result(html):
         for torrent in torrent_group[0:3]:
             torrent_name = torrent.find('a', class_='med tLink ts-text hl-tags bold').text
             torrent_date = torrent.find('td', class_='row4 small nowrap').text
-            try:
+            try:  # формат времени на rutracker 23-Фев-20 16:35
                 torrent_date = datetime.strptime(torrent_date, '%d-%m-%Y')
             except ValueError:
                 torrent_date = datetime.now()
             torrent_size = torrent.find('a', class_='small tr-dl dl-stub').text
-            torrent_link = torrent.find('a', class_='small tr-dl dl-stub')['href']
-    #         three_torrent_dict = {
-    #             'torrent_name': torrent_name,
-    #             'torrent_created': torrent_date,
-    #             'torrent_size': torrent_size,
-    #             'torrent_download_link': f'https://rutracker.org/forum/{torrent_link}'
-    #         }
-    #         three_torrent_list.append(three_torrent_dict)
-    #     return three_torrent_list
+            torrent_link = f"https://rutracker.org/forum/{torrent.find('a', class_='small tr-dl dl-stub')['href']}"
             save_torrent(torrent_name, torrent_date, torrent_size, torrent_link)
         return True
     return False
@@ -97,6 +96,7 @@ def parse_search_result(html):
 
 def save_torrent(torrent_name, torrent_date, torrent_size, torrent_file_link):
     torrent_exist_count = Torrent.query.filter(Torrent.torrent_file_link == torrent_file_link).count()
+    print(torrent_exist_count)
     if not torrent_exist_count:
         new_torrent = Torrent(torrent_name=torrent_name, torrent_date=torrent_date, torrent_size=torrent_size, torrent_file_link=torrent_file_link)
         try:
@@ -108,10 +108,10 @@ def save_torrent(torrent_name, torrent_date, torrent_size, torrent_file_link):
 
 
 def search_in_db(search_text):
-    torrent_exist_count = Torrent.query.filter(Torrent.torrent_name == search_text).count()
-    print(torrent_exist_count)
+    torrent_exist_count = Torrent.query.filter(Torrent.torrent_name.ilike(f'%{search_text}%')).all()
+    print(torrent_exist_count, type(torrent_exist_count))
 
 
 if __name__ == "__main__":
-    search_in_db("Warhammer")
-    #print(get_rutracker_session())
+    search_in_db("*Warhammer*")
+    # print(get_rutracker_session())
