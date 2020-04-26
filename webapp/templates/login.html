@@ -11,40 +11,36 @@
     <title>{{ page_title }}</title>
   </head>
   <body>
-    <div class="container">
-      <h1>{{ page_title }}</h1>
-      {% with messages = get_flashed_messages() %}
-      {% if messages %}
-      <div class="alert alert-warning" role="alert">
-          {% for message in messages %}
-              {{ message }}<br>
-          {% endfor %}
-      </div>
-      {% endif %}
-      {% endwith %}
-      <h2>{{ sess }}</h2>
-        <div class="row">       
-          <div class="col">
-            <form action="{{ url_for('parsed_torrent_page') }}" method="POST">
+      <div class="container">
+            <h1>{{ page_title }}</h1>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+        <div class="alert alert-warning" role="alert">
+            {% for message in messages %}
+                {{ message }}<br>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <div class="row">
+          <div class="col-4">
+            <form action="{{ url_for('process_login') }}" method="POST">
+              {{ form.hidden_tag() }}
               <div class="form-group">
-                 {{ rutracker_form.hidden_tag() }}
-                 {{ rutracker_form.submit() }} 
-            </div>
+                {{ form.username.label }}
+                {{ form.username() }}
+              </div>
+              <div class="form-group">
+                  {{ form.password.label }}
+                  {{ form.password() }}
+              </div>
+              <p>{{ form.submit() }}</p>
             </form>
           </div>
+          <div class="col-4">
+          </div>
         </div>
-        <div class="row-1">
-            <div class="col-0">
-                <form action="{{ url_for('search_rutracker_page') }}" method="POST">
-                  <div class="form-group">
-                    {{ rutracker_search.hidden_tag() }}
-                    {{ rutracker_search.search_text() }}
-                    {{ rutracker_search.submit() }}
-                  </div>
-                </form>
-            </div>
-        </div>
-    </div>
+      </div> 
 
              
     <!-- Optional JavaScript -->

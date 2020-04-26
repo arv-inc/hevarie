@@ -6,10 +6,12 @@
 # 6) Сохранять в базу первые три результата по запросу поиска
 # 7) Поиск делать сначала в базе – затем на сайте
 
-from flask import Flask, render_template
-from webapp.model import db, Torrent
+from flask import Flask, render_template, flash, redirect, url_for
+from flask_login import LoginManager, current_user, login_required, login_user, logout_user
+
+from webapp.model import db, Torrent, User
 from webapp.get_rutracker_page import get_rutracker_page, parse_torrent_page, parse_search_result, get_rutracker_session
-from webapp.forms import RutrackerPage, RutrackerSearch
+from webapp.forms import RutrackerPage, RutrackerSearch, LoginForm
 
 
 def create_app():
@@ -19,12 +21,22 @@ def create_app():
     rutracker_login = app.config["RUTRACKER_LOGIN"]
     rutracker_password = app.config["RUTRACKER_PASSWORD"]
     db.init_app(app)
+
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+    login_manager.login_view = 'login'
+
     try:
         sess = get_rutracker_session(rutracker_login_url, rutracker_login, rutracker_password)
     except(ValueError):
         return("Ошибка сети")
 
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(user_id)
+
     @app.route('/')
+    @login_required
     def index():
         page_title = "Hevarie - parser"
         rutracker_form = RutrackerPage()
@@ -32,6 +44,32 @@ def create_app():
         return render_template(
             'main_page.html', page_title=page_title, rutracker_form=rutracker_form, rutracker_search=rutracker_search, sess=sess
         )
+
+    @app.route('/login')
+    def login():
+        if current_user.is_authenticated:
+            return redirect(url_for('index'))
+        title = "Авторизация"
+        login_form = LoginForm()
+        return render_template('login.html', page_title=title, form=login_form)
+
+    @app.route('/process-login', methods=['POST'])
+    def process_login():
+        form = LoginForm()
+        if form.validate_on_submit():
+            user = User.query.filter(User.username == form.username.data).first()
+            if user and user.check_password(form.password.data):
+                login_user(user)
+                flash('Вы успешно вошли на сайт Hevarie')
+                return redirect(url_for('index'))
+        flash('Неправильное имя или пароль')
+        return redirect(url_for('login'))
+
+    @app.route('/logout')
+    def logout():
+        logout_user()
+        flash('Вы успешно вышли')
+        return redirect(url_for('login'))
 
     @app.route('/search_result', methods=['POST', 'GET'])
     def search_rutracker_page():
