@@ -13,7 +13,7 @@ def login():
         return redirect(url_for('rutracker.index'))
     title = "Авторизация"
     login_form = LoginForm()
-    return render_template('login.html', page_title=title, form=login_form)
+    return render_template('users/login.html', page_title=title, form=login_form)
 
 
 @blueprint.route('/process-login', methods=['POST'])

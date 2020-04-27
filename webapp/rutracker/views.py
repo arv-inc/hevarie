@@ -17,7 +17,7 @@ def index():
     rutracker_form = RutrackerPage()
     rutracker_search = RutrackerSearch()
     return render_template(
-        'main_page.html', page_title=page_title, rutracker_form=rutracker_form, rutracker_search=rutracker_search, sess=rutracker_session
+        'rutracker/main_page.html', page_title=page_title, rutracker_form=rutracker_form, rutracker_search=rutracker_search, sess=rutracker_session
     )
 
 
@@ -36,7 +36,7 @@ def search_rutracker_page():
         pass
     if search_result:
         return render_template(
-                'three_result.html', search_result=search_result, page_title=page_title, rutracker_search_url=rutracker_search_url
+                'rutracker/three_result.html', search_result=search_result, page_title=page_title, rutracker_search_url=rutracker_search_url
             )
     else:
         return ("Не найдено")
@@ -49,7 +49,7 @@ def parsed_torrent_page():
     rutracker_page = parse_torrent_page(get_rutracker_page(torrent_url, rutracker_session))
     if rutracker_page:
         return render_template(
-            'index.html', page_title=page_title,
+            'rutracker/index.html', page_title=page_title,
             rutracker_page=rutracker_page
             )
     else:

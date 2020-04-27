@@ -11,23 +11,10 @@
     <title>{{ page_title }}</title>
   </head>
   <body>
-    <h1>{{ page_title }}</h1>
-    <h1><a href="{{ rutracker_page }}" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">Главная ссылка</a></h1>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-              <h2>{{ rutracker_page.torrent_title }}</h2>
-              <p> {{ rutracker_page.torrent_added }} </p>
-              <p>Добавлен: {{ rutracker_page.torrent_since}}</p>
-              <h4> {{ rutracker_page.created_by }} </h4>
-              <h4>{{ rutracker_page.creater_url }}</h4>
-              <h4>{{ rutracker_page.creater_name }}</h4>
-              <h4>{{ rutracker_page.torrent_short_description }}</h4>
-          </div>
-        </div>
-      </div> 
-
-             
+    <div class="container">
+      <h1>{{ page_title }}</h1>
+      {% block content %}{% endblock %}
+    </div>         
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
