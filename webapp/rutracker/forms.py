@@ -8,5 +8,8 @@ class RutrackerPage(FlaskForm):
 
 
 class RutrackerSearch(FlaskForm):
-    search_text = StringField('Текст для поиска', validators=[DataRequired()], render_kw={"class": "form-control"})
-    submit = SubmitField('Искать', render_kw={"class": "btn btn-primary"})
+    search_text = StringField(
+        'Текст для поиска', validators=[DataRequired()],
+        render_kw={"class": "form-control mr-sm-2", "type": "search", "placeholder": "Введите текст для поиска"}
+        )
+    submit = SubmitField('Искать', render_kw={"class": "btn btn-outline-success my-2 my-sm-0"})
