@@ -24,8 +24,8 @@
       {% endwith %}
       <h2>{{ sess }}</h2>
         <div class="row">       
-          <div class="col">
-            <form action="{{ url_for('parsed_torrent_page') }}" method="POST">
+          <div class="col-8">
+            <form action="{{ url_for('rutracker.parsed_torrent_page') }}" method="POST">
               <div class="form-group">
                  {{ rutracker_form.hidden_tag() }}
                  {{ rutracker_form.submit() }} 
@@ -35,7 +35,7 @@
         </div>
         <div class="row-1">
             <div class="col-0">
-                <form action="{{ url_for('search_rutracker_page') }}" method="POST">
+                <form action="{{ url_for('rutracker.search_rutracker_page') }}" method="POST">
                   <div class="form-group">
                     {{ rutracker_search.hidden_tag() }}
                     {{ rutracker_search.search_text() }}

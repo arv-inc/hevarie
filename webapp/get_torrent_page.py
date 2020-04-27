@@ -1,7 +1,7 @@
 from datetime import datetime
 
 import requests
-from webapp.model import db, Torrent
+from webapp.rutracker.models import db, Torrent
 from bs4 import BeautifulSoup
 from webapp.config import headers
 
