@@ -5,13 +5,15 @@
 # 5) по умолчанию главная страница должна выводить эти спарсенные данные (будем потом заменять, главное понять как это работает)
 # 6) Сохранять в базу первые три результата по запросу поиска
 # 7) Поиск делать сначала в базе – затем на сайте
+# 8) Добавить описание к торренту
+# убрать лишнее в названии
+# 9) задеплойть
 
 from flask import Flask
 from flask_login import LoginManager
 from flask_migrate import Migrate
-
 from webapp.user.views import blueprint as user_blueprint
-from webapp.user.models import User
+from webapp.user.models import Tuser as User
 from webapp.rutracker.views import blueprint as rutracker_blueprint
 from webapp.db import db
 
@@ -21,7 +23,6 @@ def create_app():
     app.config.from_pyfile('config.py')
     db.init_app(app)
     migrate = Migrate(app, db)
-    print(migrate)
 
     login_manager = LoginManager()
     login_manager.init_app(app)

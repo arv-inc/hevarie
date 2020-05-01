@@ -3,7 +3,7 @@ from flask_login import current_user, login_user, logout_user
 
 from webapp.db import db
 from webapp.user.forms import LoginForm, RegistrationForm
-from webapp.user.models import User
+from webapp.user.models import Tuser as User
 
 blueprint = Blueprint('user', __name__, url_prefix='/users')
 

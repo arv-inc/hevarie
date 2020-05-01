@@ -7,6 +7,11 @@ class RutrackerPage(FlaskForm):
     submit = SubmitField('Вход')
 
 
+class RutrackerPage2(FlaskForm):
+    rutracker_torrent_name = StringField(validators=[DataRequired()])
+    submit = SubmitField('открыть описание')
+
+
 class RutrackerSearch(FlaskForm):
     search_text = StringField(
         'Текст для поиска', validators=[DataRequired()],

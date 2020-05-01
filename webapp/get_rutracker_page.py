@@ -4,7 +4,7 @@ import platform
 
 from sqlalchemy.exc import IntegrityError, InvalidRequestError
 import requests
-from webapp.rutracker.models import db, Torrent
+from webapp.rutracker.models import db, Torrent4
 from bs4 import BeautifulSoup
 from webapp.config import headers
 
@@ -24,7 +24,7 @@ def get_rutracker_session(login_page_url, username, password):
     return(session)
 
 
-def get_rutracker_page(html_url, sess):
+def get_html(html_url, sess):
     try:
         resp = sess.get(html_url)
         resp.raise_for_status()
@@ -33,31 +33,41 @@ def get_rutracker_page(html_url, sess):
         return(False, "Сетевая ошибка")
 
 
-def get_html(url):
-    try:
-        result = requests.get(url, headers)
-        result.raise_for_status()
-        return result.text
-    except(requests.RequestException, ValueError):
-        print("Сетевая ошибка")
-        return False
-
-
 def parse_torrent_page(html):
     if html:
         soup = BeautifulSoup(html, 'html.parser')
         try:
             torrent_added = soup.find('a', class_='p-link small').text
+        except (TypeError, AttributeError):
+            torrent_added = "отсутсвует"
+        try:
             torrent_since = soup.find('span', class_='posted_since hide-for-print').text
+        except (TypeError, AttributeError):
+            torrent_since = "отсутсвует"
+        try:
             torrent_description = soup.find('div', class_="post_body")
+        except (TypeError, AttributeError):
+            torrent_description = "отсутсвует"
+        try:
             created_by = f'Производитель{torrent_description.find(string="Производитель").next}'
-            creater_url = f'Сайт производителя: {torrent_description.find("a", class_="postLink")["href"]}'
+        except (TypeError, AttributeError):
+            created_by = "отсуствует"
+        try:
+            creater_url = torrent_description.find("a", class_="postLink")["href"]
+        except (TypeError, AttributeError):
+            creater_url = "отсутствует"
+        try:
             creater_name = f'Автор{torrent_description.find(string="Автор").next}'
+        except (TypeError, AttributeError):
+            creater_name = "не указан"
+        try:
             torrent_short_description = f'Описание{torrent_description.find(string="Описание").next}'  # Не получилось взять описание с нового абзаца
+        except (TypeError, AttributeError):
+            torrent_short_description = "отсутствует"
+        try:
             torrent_title = torrent_description.find('span').text
         except (TypeError, AttributeError):
-            print("Описание не найдено")
-            return None
+            torrent_title = "Описание не найдено"
 
         torrent_description_dict = {'torrent_added': torrent_added,
                                     'torrent_since': torrent_since,
@@ -71,8 +81,7 @@ def parse_torrent_page(html):
     return False
 
 
-def parse_search_result(html):
-    # three_torrent_list = []
+def parse_search_result(html, sess):
     if html:
         soup = BeautifulSoup(html, 'html.parser')
         try:
@@ -80,25 +89,41 @@ def parse_search_result(html):
         except (TypeError, AttributeError):
             print("По данному запросу ничего нет")
             return None
-        for torrent in torrent_group[0:3]:
-            torrent_name = torrent.find('a', class_='med tLink ts-text hl-tags bold').text
+        count = 0
+        for torrent in torrent_group:
+            try:
+                torrent_name = torrent.find('a', class_='med tLink ts-text hl-tags bold').text
+            except AttributeError:
+                continue
             torrent_date = torrent.find('td', class_='row4 small nowrap').text
-            try:  # формат времени на rutracker 23-Фев-20 16:35
-                torrent_date = datetime.strptime(torrent_date, '%d-%m-%Y')
+            try:
+                torrent_date = datetime.strptime(' '.join(torrent_date[1:10].split('-')), '%d %b %y')
             except ValueError:
                 torrent_date = datetime.now()
             torrent_size = torrent.find('a', class_='small tr-dl dl-stub').text
-            torrent_link = f"https://rutracker.org/forum/{torrent.find('a', class_='small tr-dl dl-stub')['href']}"
-            save_torrent(torrent_name, torrent_date, torrent_size, torrent_link)
+            torrent_link = f"https://rutracker.org/forum/{torrent.find('a', class_='med tLink ts-text hl-tags bold')['href']}"
+            torrent_download_link = f"https://rutracker.org/forum/{torrent.find('a', class_='small tr-dl dl-stub')['href']}"
+            torrent_description = (get_html(torrent_link, sess))
+            save_torrent(torrent_name, torrent_date, torrent_size, torrent_link, torrent_download_link, torrent_description)
+            count += 1
+            if count == 10:
+                break
         return True
     return False
 
 
-def save_torrent(torrent_name, torrent_date, torrent_size, torrent_file_link):
-    torrent_exist_count = Torrent.query.filter(Torrent.torrent_file_link == torrent_file_link).count()
+def save_torrent(torrent_name, torrent_date, torrent_size, torrent_link, torrent_download_link, torrent_description):
+    torrent_exist_count = Torrent4.query.filter(Torrent4.torrent_download_link == torrent_download_link).count()
     print(torrent_exist_count)
     if not torrent_exist_count:
-        new_torrent = Torrent(torrent_name=torrent_name, torrent_date=torrent_date, torrent_size=torrent_size, torrent_file_link=torrent_file_link)
+        new_torrent = Torrent4(
+            torrent_name=torrent_name,
+            torrent_date=torrent_date,
+            torrent_size=torrent_size,
+            torrent_link=torrent_link,
+            torrent_download_link=torrent_download_link,
+            torrent_description=torrent_description
+            )
         try:
             db.session.add(new_torrent)
             db.session.commit()
@@ -108,10 +133,18 @@ def save_torrent(torrent_name, torrent_date, torrent_size, torrent_file_link):
 
 
 def search_in_db(search_text):
-    torrent_exist_count = Torrent.query.filter(Torrent.torrent_name.ilike(f'%{search_text}%')).all()
-    print(torrent_exist_count, type(torrent_exist_count))
+    search_in_db_result = Torrent4.query.filter(Torrent4.torrent_name.ilike(f'%{search_text}%')).all()
+    if len(search_in_db_result) > 5:
+        return search_in_db_result
+    else:
+        return False
+
+
+def search_link(search_text, sess):
+    link = Torrent4.query.filter(Torrent4.id == search_text).first().torrent_link
+    torrent_description = parse_torrent_page(get_html(link, sess))
+    return torrent_description
 
 
 if __name__ == "__main__":
-    search_in_db("*Warhammer*")
-    # print(get_rutracker_session())
+    search_in_db()

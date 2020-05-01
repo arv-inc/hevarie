@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template
 from flask_login import login_required
-from webapp.rutracker.models import Torrent
+from webapp.rutracker.models import Torrent4
 from webapp.rutracker.forms import RutrackerPage, RutrackerSearch
-from webapp.get_rutracker_page import get_rutracker_page, parse_torrent_page, parse_search_result, get_rutracker_session
-from webapp.config import RUTRACKER_LOGIN, RUTRACKER_LOGIN_URL, RUTRACKER_PASSWORD
+from webapp.get_rutracker_page import get_html, parse_torrent_page, parse_search_result, get_rutracker_session, search_in_db
+from webapp.config import RUTRACKER_LOGIN, RUTRACKER_LOGIN_URL, RUTRACKER_PASSWORD, RUTRACKER_SEARCH_URL
 
 blueprint = Blueprint('rutracker', __name__)
 
@@ -23,20 +23,16 @@ def index():
 
 @blueprint.route('/search_result', methods=['POST', 'GET'])
 def search_rutracker_page():
-    rutracker_search_url = "https://rutracker.org/forum/tracker.php?nm="
     form = RutrackerSearch()
     page_title = "Результат поиска на Rutracker"
-    search_text = form.search_text.data
-    rutracker_search_url = f'{rutracker_search_url}{search_text}'
-    search_result = Torrent.query.filter(Torrent.torrent_name.ilike(f'%{search_text}%')).all()
+    search_text = "%".join(form.search_text.data.split())
+    search_result = search_in_db(search_text)
     if not search_result:
-        parse_search_result(get_rutracker_page(rutracker_search_url, rutracker_session))
-        search_result = Torrent.query.filter(Torrent.torrent_name.ilike(f'%{search_text}%')).all()
-    else:
-        pass
+        parse_search_result(get_html(f'{RUTRACKER_SEARCH_URL}{search_text}', rutracker_session), rutracker_session)
+        search_result = Torrent4.query.filter(Torrent4.torrent_name.ilike(f'%{search_text}%')).all()
     if search_result:
         return render_template(
-                'rutracker/three_result.html', search_result=search_result, page_title=page_title, rutracker_search_url=rutracker_search_url
+                'rutracker/three_result.html', search_result=search_result[0:5], page_title=page_title, rutracker_search_url=f'{RUTRACKER_SEARCH_URL}{search_text}'
             )
     else:
         return ("Не найдено")
@@ -44,9 +40,9 @@ def search_rutracker_page():
 
 @blueprint.route('/rutracker_page', methods=['POST', 'GET'])
 def parsed_torrent_page():
-    torrent_url = "https://rutracker.org/forum/viewtopic.php?sid=LE5slP2X&t=5855338"
+    torrent_url = "https://rutracker.org/forum/viewtopic.php?t=5885798"
     page_title = "Rutracker Torrent"
-    rutracker_page = parse_torrent_page(get_rutracker_page(torrent_url, rutracker_session))
+    rutracker_page = parse_torrent_page(get_html(torrent_url, rutracker_session))
     if rutracker_page:
         return render_template(
             'rutracker/index.html', page_title=page_title,
