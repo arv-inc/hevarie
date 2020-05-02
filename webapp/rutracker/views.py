@@ -38,9 +38,9 @@ def search_rutracker_page():
         return ("Не найдено")
 
 
-@blueprint.route('/rutracker_page', methods=['POST', 'GET'])
+@blueprint.route('/rutracker_page/', methods=['POST', 'GET'])
 def parsed_torrent_page():
-    torrent_url = "https://rutracker.org/forum/viewtopic.php?t=5885798"
+    torrent_url = "https://rutracker.org/forum/viewtopic.php?t=5855263"
     page_title = "Rutracker Torrent"
     rutracker_page = parse_torrent_page(get_html(torrent_url, rutracker_session))
     if rutracker_page:

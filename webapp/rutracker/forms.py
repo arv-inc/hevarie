@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired
 
 
 class RutrackerPage(FlaskForm):
-    submit = SubmitField('Вход')
+    submit = SubmitField('Описание')
 
 
 class RutrackerPage2(FlaskForm):

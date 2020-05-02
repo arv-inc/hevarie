@@ -9,7 +9,7 @@
                 <p>имя: {{ torrent_dict.torrent_name }} </p>
                 <p>добавлен: {{ torrent_dict.torrent_date.strftime('%d.%m.%y')}}</p>
                 <p>размер: {{ torrent_dict.torrent_size }}</p>
-                <p>ссылка на торрент: <a href={{ torrent_dict.torrent_link }}>{{ torrent_dict.torrent_link }}</a></p>
+                <p>ссылка на торрент: <a href="{{ url_for('rutracker.parsed_torrent_page') }}">{{ torrent_dict.torrent_link }}</a></p>
                 <p>ссылка на скачивание: <a href={{ torrent_dict.torrent_download_link }}>{{ torrent_dict.torrent_download_link }}</a></p>
                 {% endfor %}
           </div>
